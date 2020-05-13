@@ -63,9 +63,9 @@
                         </div>
             
                         <ul class="tags">
-                            @foreach ($categories as $item)
+                            @foreach ($categories as $category) 
                             
-                            <li><a href="#">{{$item->name }}</a></li>  
+                            <li><a href="{{ route('tag.post',$category->slug) }}">{{$category->name }}</a></li>  
 
                             @endforeach
                           
@@ -96,7 +96,7 @@
                                 @endguest
     
                             </li>
-                            <li><a href="#"><i class="fa fa-comment"></i>6</a></li>
+                            <li><a href="#"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
                             <li><a href="#"><i class="fa fa-eye"></i>{{ $post->view_count }}</a></li>
                         </ul>
 
@@ -118,7 +118,7 @@
                 <div class="single-post info-area">
 
                     <div class="sidebar-area about-area">
-                        <h4 class="title"><b>ABOUT Author</b></h4>
+                        <h4 class="title"><b>About Author</b></h4>
                         <p> {{ $post->user->about }} </p>
                     </div>
 
@@ -129,7 +129,7 @@
                         <h4 class="title"><b>Category Cloud</b></h4>
                         <ul>
                             @foreach ($categories as $category)
-                            <li><a href="#">{{ $category->name }}</a></li> 
+                            <li><a href="{{ route('tag.post',$category->slug) }}">{{ $category->name }}</a></li> 
                             @endforeach 
                         </ul>
 
@@ -160,7 +160,7 @@
                         <a class="avatar" href="#"><img src="{{ asset('backend/images/profile/'.$r_post->user->image) }}" alt="Profile Image"></a>
 
                         <div class="blog-info">
-                            <h4 class="title"><a href="#"><b>{{ $r_post->title }}</b></a></h4>
+                            <h4 class="title"><a href="{{ route('post.details',$r_post->slug) }}"><b>{{ $r_post->title }}</b></a></h4>
 
                             <ul class="post-footer">
                                 <li>
@@ -185,7 +185,7 @@
                                     @endguest
         
                                 </li>
-                                <li><a href="#"><i class="fa fa-comment"></i>6</a></li>
+                                <li><a href="#"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
                                 <li><a href="#"><i class="fa fa-eye"></i>{{ $r_post->view_count }}</a></li>
                             </ul>
                         </div><!-- blog-info -->
@@ -206,118 +206,128 @@
         <div class="row">
 
             <div class="col-lg-8 col-md-12">
+                @guest
+                <p class="bg-warning">your shuld be member of this site to post comment </p>
+             If already memeber then <h4 style="display:inline-block"> <a href="{{ route('login') }}">Login</a></h4> 
+             & if new then <h4 style="display:inline-block"><a href="{{ route('register') }}">register</a></h4>
+
+                @else 
                 <div class="comment-form">
-                    <form method="post">
+                    {!! Form::open(['route' =>['comment.store',$post->id] ]) !!}
                         <div class="row">
 
-                            <div class="col-sm-6">
-                                <input type="text" aria-required="true" name="contact-form-name" class="form-control"
-                                    placeholder="Enter your name" aria-invalid="true" required >
-                            </div><!-- col-sm-6 -->
-                            <div class="col-sm-6">
-                                <input type="email" aria-required="true" name="contact-form-email" class="form-control"
-                                    placeholder="Enter your email" aria-invalid="true" required>
-                            </div><!-- col-sm-6 -->
-
                             <div class="col-sm-12">
-                                <textarea name="contact-form-message" rows="2" class="text-area-messge form-control"
+                                <textarea name="comment" rows="2" class="text-area-messge form-control"
                                     placeholder="Enter your comment" aria-required="true" aria-invalid="false"></textarea >
                             </div><!-- col-sm-12 -->
                             <div class="col-sm-12">
-                                <button class="submit-btn" type="submit" id="form-submit"><b>POST COMMENT</b></button>
+                                <button class="submit-btn" type="submit" id="form-submit"><b>Submit</b></button>
                             </div><!-- col-sm-12 -->
 
                         </div><!-- row -->
-                    </form>
+                   {!! Form::close() !!}
                 </div><!-- comment-form -->
 
-                <h4><b>COMMENTS(12)</b></h4>
+                @endguest
+               
 
-                <div class="commnets-area">
+                <h4><b>Comment ({{ $post->comments()->count()  }})</b></h4>
+                  
+                @if ($post->comments()->count() > 0)
+                   
+                @foreach ($post->comments as $comment)
+                    <div class="commnets-area">
+                      <div class="comment">
+                         <div class="post-info">
 
-                    <div class="comment">
+                        <div class="left-area">
+                            <a class="avatar" href="#"><img src="{{ asset('backend/images/profile/'.$comment->user->image )}}" alt="Profile Image"></a>
+                        </div>
 
-                        <div class="post-info">
+                        <div class="middle-area">
+                            <a class="name" href="#"><b>{{ $comment->user->name}}</b></a>
+                            <h6 class="date">{{ $comment->created_at->diffForHumans() }}</h6>
+                        </div>
 
-                            <div class="left-area">
-                                <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-                            </div>
-
-                            <div class="middle-area">
-                                <a class="name" href="#"><b>Katy Liu</b></a>
-                                <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                            </div>
-
-                            <div class="right-area">
-                                <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-                            </div>
-
-                        </div><!-- post-info -->
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                            Ut enim ad minim veniam</p>
-
+                      <div class="float-right">
+                        <div class="body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">  
+                                <li role="presentation">
+                                    <a href="#profile_with_icon_title" data-toggle="tab">
+                                         Reply
+                                    </a>
+                                </li>    
+                            </ul>
+                        </div>
                     </div>
 
-                    <div class="comment">
-                        <h5 class="reply-for">Reply for <a href="#"><b>Katy Lui</b></a></h5>
+                    </div><!-- post-info -->
 
-                        <div class="post-info">
-
-                            <div class="left-area">
-                                <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
+                                <p class="ml-5"> Says: {{ $comment->comment }}</p>
+                     
+                                
+                    <!-- Tab panes -->
+                    <div class="tab-content mt-3">
+                                        
+                        <div role="tabpanel" class="tab-pane fade" id="profile_with_icon_title">
+                            <div class="row clearfix">
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                                    <div class="card">
+                                
+                                        <div class="body">
+                                            {!! Form::open(['route'=>['reply.store',$comment->id],'classs' => 'form-line']) !!}
+                                            <textarea class="form-control" name="reply"  rows="2"></textarea>
+                                            {!! Form::submit('submit', ['class'=>'btn mt-2 btn-sm btn-success']) !!}
+                                            {!! Form::close() !!}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-
-                            <div class="middle-area">
-                                <a class="name" href="#"><b>Katy Liu</b></a>
-                                <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                            </div>
-
-                            <div class="right-area">
-                                <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-                            </div>
-
-                        </div><!-- post-info -->
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                            Ut enim ad minim veniam</p>
-
+                        </div>
                     </div>
 
-                </div><!-- commnets-area -->
+                </div>  
 
-                <div class="commnets-area ">
 
-                    <div class="comment">
+                <!--replying result section -->
+                @if ($comment->replies()->count() > 0)
+                <div class="comment ml-3">
+                    <div class="post-info ml-3 ">
+        
+                            {{-- reply part --}}
+                        @foreach ($comment->replies as $reply)
+                      
+                        <div class="left-area">
+                            <a class="avatar" href="#"><img src="{{ asset('backend/images/profile/'.$reply->user->image )}}" alt="Profile Image"></a>
+                        </div>
 
-                        <div class="post-info">
+                        <div class="middle-area">
+                            <a class="name" href="#"><b>{{ $reply->user->name}}</b></a>
+                            <h6 class="date">{{ $reply->created_at->diffForHumans() }} Replied</h6>
+                        </div>    
+                     </div>
 
-                            <div class="left-area">
-                                <a class="avatar" href="#"><img src="images/avatar-1-120x120.jpg" alt="Profile Image"></a>
-                            </div>
+                        <p style="margin-left:100px" >  {{ $reply->reply }} </p>
+                    
+                     </div>
+                
+                        @endforeach
+                     
+ 
+                @endif
+                                           
 
-                            <div class="middle-area">
-                                <a class="name" href="#"><b>Katy Liu</b></a>
-                                <h6 class="date">on Sep 29, 2017 at 9:48 am</h6>
-                            </div>
+              </div><!-- commnets-area -->
+               @endforeach
+            
+                    @else
+                    <div class="commnets-area">
+                        <div class="comment"> <p>  No comment yet, put your first comment</p>
+                        </div>
+                    </div>   
+                    @endif
 
-                            <div class="right-area">
-                                <h5 class="reply-btn" ><a href="#"><b>REPLY</b></a></h5>
-                            </div>
-
-                        </div><!-- post-info -->
-
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                            ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur
-                            Ut enim ad minim veniam</p>
-
-                    </div>
-
-                </div><!-- commnets-area -->
-
-                <a class="more-comment-btn" href="#"><b>VIEW MORE COMMENTS</a>
 
             </div><!-- col-lg-8 col-md-12 -->
 

@@ -6,6 +6,7 @@ use Validator;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Controllers\Controller;
 
 class SettingsController extends Controller
@@ -25,7 +26,7 @@ class SettingsController extends Controller
         $validate=Validator::make($data,[
           
             'name' => 'required|min:4',
-            'profileImage' => 'required|mimes:jpg,jpeg,png,gif',
+            'profileImage' => 'mimes:jpg,jpeg,png,gif',
             'about' => 'required', 
 
             ]);
@@ -36,7 +37,7 @@ class SettingsController extends Controller
 
         }
 
-        
+
         $user->name=$request->name;
         $user->about=$request->about;
         if ($user->save()) {
@@ -68,7 +69,45 @@ class SettingsController extends Controller
 
 
 
+    //function for password chane
+    public function updatePassword(Request $request, $id){
+          
+         $user=User::findorFail($id);
+         
+         $this->validate($request,[
+             'old_password' => 'required',
+             'password'     => 'required|confirmed'
+         ]);
 
+
+        $oldPassword=$user->password;
+
+        if (Hash::check($request->old_password, $oldPassword)) {
+           
+            if (!Hash::check($request->password, $oldPassword)) {
+                    $user->password=Hash::make($request->password);
+                    $saved=$user->save();
+                if ($saved) {
+                     
+                    Auth::logout();
+                  
+                    return redirect()->back()->with('success','successfully! your current password changed');
+                    return redirect()->back()->to(route('home'));
+                }
+               
+            } else {
+               return redirect()->back()->with('warning','New password & old password can not be same');
+            }
+              
+
+        }else {
+            
+            return redirect()->back()->with('danger','current password does not matched');
+        }
+
+
+
+    }
 
 
 

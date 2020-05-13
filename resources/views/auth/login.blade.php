@@ -10,7 +10,8 @@
 
               
           <div style="overflow:hidden;text-align:center" class="slider">
-               <h2 style="color:#fff;margin-top:120px;">LogIn HERE</h2>
+               <h2 style="color:#fff;margin-top:120px;">Login</h2>
+               <h2 style="color:#fff;margin-top:5px;">if new <a style="color:yellow" href="{{route('register')}}">Registration</a> first</h2>
           </div>
 
 @endsection

@@ -32,9 +32,9 @@
 
 <div class="row">
 
-    @if ($category->posts->count() > 0)
+    @if ($posts->count() > 0)
     
-    @foreach ($category->posts as $post)
+    @foreach ($posts as $post)
         
     <div class="col-lg-4 col-md-6">  
         <div class="card h-100">
@@ -83,7 +83,7 @@
      @endforeach 
 
     @else
-        <div class="col-lg-4 col-md-6">  
+        <div class="col-lg-12 col-md-12">  
         <div class="card h-100">
             <div class="single-post post-style-1">
 

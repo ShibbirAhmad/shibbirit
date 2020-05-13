@@ -9,7 +9,7 @@ $(document).ready(function(){
           
           return true;
       }
-   
+
        e.preventDefault();
    });
    
@@ -19,7 +19,7 @@ $(document).ready(function(){
 
 //this for disappear alert
 
-setTimeout(removeAlert,3000)
+setTimeout(removeAlert,5000)
 function removeAlert(){
 
    document.querySelector('.alert').remove();

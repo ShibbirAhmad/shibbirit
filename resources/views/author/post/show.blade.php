@@ -47,7 +47,6 @@
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <!--card for post category and tags -->
                      <!-- Tags Input -->
-                     
                      <div class="card">
                         <div class="card-header bg-light-blue">
                             <h4>  Category    </h4>

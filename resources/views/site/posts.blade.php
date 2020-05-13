@@ -64,7 +64,7 @@
                             @endguest
 
                         </li>
-                        <li><a href="#"><i class="fa fa-comment"></i>6</a></li>
+                        <li><a href="#"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
                         <li><a href="#"><i class="fa fa-eye"></i>{{ $post->view_count }}</a></li>
                     </ul>
 

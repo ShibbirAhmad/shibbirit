@@ -29,7 +29,7 @@
                     </li>
                     <li role="presentation">
                         <a href="#messages_with_icon_title" data-toggle="tab">
-                            <i class="material-icons">email</i> MESSAGES
+                            <i class="material-icons">change_history</i> PASSWORD
                         </a>
                     </li>
                     
@@ -94,24 +94,33 @@
                         <div class="card">
                              
                             <div class="body">
-                                <form>
-                                    <label for="email_address">Email Address</label>
+                                <form method="POST" action="{{route('admin.update.password',Auth::user()->id)}}" >
+                                    @csrf
+                                    @method('PATCH')
+
+                                    <label for="current_password">Current Password</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" id="email_address" class="form-control" placeholder="Enter your email address">
+                                            <input type="password" name="old_password" id="password" class="form-control" placeholder="Enter your old password">
                                         </div>
                                     </div>
+
                                     <label for="password">Password</label>
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="password" id="password" class="form-control" placeholder="Enter your password">
+                                            <input type="password" name="password" id="password" class="form-control" placeholder="Enter New password">
                                         </div>
                                     </div>
-    
-                                    <input type="checkbox" id="remember_me" class="filled-in">
-                                    <label for="remember_me">Remember Me</label>
+                                    
+                                    <label for="password">Confirm Password</label>
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="password" name="password_confirmation" id="password" class="form-control" placeholder="Retype New password">
+                                        </div>
+                                    </div>
+
                                     <br>
-                                    <button type="button" class="btn btn-primary m-t-15 waves-effect">LOGIN</button>
+                                    <button type="submit" class="btn btn-primary m-t-15 waves-effect">Change</button>
                                 </form>
                             </div>
                         </div>

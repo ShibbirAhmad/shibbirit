@@ -47,50 +47,31 @@
     <div class="col-lg-4 col-md-6 col-sm-12 col-xs-12">
         <!--card for post category and tags -->
                      <!-- Tags Input -->
-                     
                      <div class="card">
-                        <div class="card-header">
-                            <h4>  Category & Tags    </h4>
+                        <div class="card-header bg-light-blue">
+                            <h4>  Category    </h4>
                         </div>
-                        <div class="card-body">
-                            
-                                <div class="form-group">
-                                    <div class="form-line">
-                                       <label for="category">Select Category</label>
-                                       <select name="" class="form-control show-tick " data-live-search="true" multiple id="" >
-                                           @foreach ($categories as $category)
-                                               <option 
-                                               @foreach ($post->categories as $postCategory)
-                                                     {{ $postCategory->id==$category->id ? 'selected' : '' }}
-                                               @endforeach
-                                               value="{{ $category->id }}">{{ $category->name }}</option>
-                                           @endforeach
-                                       </select>
-                                    </div>
-                                </div>
-                               
-                                <div class="form-group">
-                                    <div class="form-line">
-                                       <label for="tag">Select Tags</label>
-                                       <select name="" class="form-control show-tick " data-live-search="true" multiple  id="tag" >
-                                           @foreach ($tags as $tag)
-                                               <option
-                                               @foreach ($post->tags as $postTag)
-                                                   {{ $postTag->id==$tag->id ? 'selected' : '' }}
-                                               @endforeach
-                                               value="{{ $tag->id }}">{{ $tag->name }}</option>
-                                           @endforeach
-                                       </select>
-                                    </div>
-                                </div>
-                                <br>
-                                <a href="{{route('admin.post.index')}}" class="btn btn-block btn-info waves-effect">Back</a>
-                                
-                               
-                          
-                        </div>
-                        <div class="card-footer"></div>
+                        <div class="card-body bg-blue">
+                             @foreach ($post->categories as $category)
+                                 <span class="badge bg-cyan ">{{ $category->name }}</span>
+                             @endforeach
+                        </div> 
                     </div>
+                 
+                    <div class="card-">
+                        <div class=" card-header bg-info ">
+                            <div class="card-title"><h4>Tags</h4></div>
+                        </div>
+                        <div class="card-body bg-green">
+                            @foreach ($post->tags as $tag)
+                            <span class="badge bg-pink ">{{ $tag->name }}</span>
+                        @endforeach
+                        </div>
+                    </div>
+                                     
+            <a href="{{route('admin.post.index')}}" class="btn mt-3 ml-5 btn-info waves-effect">Back</a>
+               
+            
                    
     </div>
  <!-- #END# Tags Input -->

@@ -15,6 +15,9 @@
  
  {!! Form::open(['route' => 'admin.post.store','files'=> true]) !!}
 
+<div class="card-header">
+    <div class="card-title"><h5>Create New Post <i class="fa fa-edit"></i> </h5></div>
+</div>
 
 <div class="row">
     <div class="col-lg-8 col-md-12">
@@ -93,7 +96,7 @@
      <div class="col-lg-12 cl-md-12">
          <div class="card">
              <div class="card-header">
-                 <div class="card-title"><h4>Write Post Details</h4></div>
+                 <div class="card-title"><h5>Write Post Details</h5></div>
              </div>
              
              <div class="card-body">

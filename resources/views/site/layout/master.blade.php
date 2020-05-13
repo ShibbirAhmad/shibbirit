@@ -19,7 +19,7 @@
 
 	<!-- Stylesheets -->
 
-	<link rel="stylesheet"  href="{{asset('site/common-css/bootstrap.css')}}" >
+	<link rel="stylesheet"  href="{{asset('css/app.css')}}" >
     
     <link rel="stylesheet" href="{{asset('css/fontawesome/all.min.css')}}">
 
@@ -35,14 +35,15 @@
 
     @include('site.layout.header')
     
-
+       
+        
         @yield('slider')
   
-    
+     
 
 	<section class="blog-area section">
 		<div class="container">
-
+       
             @yield('content')
             
 
@@ -50,10 +51,24 @@
 	</section><!-- section -->
 
 
-     @include('site.layout.footer')
-	
-
-     
+    @include('site.layout.footer')
+    
+          <!-- SCIPTS -->
+    
+          <script src="{{asset('js/jquery.min.js')}}"></script>
+    
+          <script src="{{asset('site/common-js/tether.min.js ')}}"></script>
+          
+          <script src="{{asset('js/fontawesome/all.min.js')}}"></script>
+      
+          <script src="{{asset('js/app.js ')}}"></script>
+          
+          <script src="{{asset('site/common-js/swiper.js')}}"></script>
+    
+          <script src="{{asset('site/common-js/scripts.js ')}}"></script>  
+      
+      
+          @stack('js') 
 
 
 </body>

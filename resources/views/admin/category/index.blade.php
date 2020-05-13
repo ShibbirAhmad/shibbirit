@@ -26,7 +26,7 @@
                     <tr>
                            <td>{{$data->id}}</td> 
                            <td> {{$data->name}}</td>
-                           <td><img src="{{asset('storage/category/'.$data->image)}} " style="border-radius:10px;width:80px;height:90px" ></td>
+                           <td><img src="{{asset('backend/images/category/'.$data->image)}}" style="border-radius:10px;width:64px;height:64px" ></td>
                            <td >
                                 <a href="#EditModal" data-toggle="modal" style="margin-right:40px;" class="btn btn-success EditButton "><i class="fas fa-edit"></i></a>
                           
@@ -93,11 +93,14 @@
         </button>
       </div>
       <div class="modal-body">
-        {!! Form::open(['method'=>'PUT','class'=>'EditForm']) !!}
+        {!! Form::open(['method'=>'PUT','class'=>'EditForm','files' => true]) !!}
                
                {!! Form::hidden('id','',['class' => 'form-control EditId']) !!}
                {!! Form::label('categorys Name') !!}
                {!! Form::text('category','', ['class' => 'form-control EditName']) !!}
+
+               {!! Form::label('Category Image') !!}
+               {!! Form::file('categoryImage', ['class' => 'form-control']) !!}
        
       </div>
       <div class="modal-footer">

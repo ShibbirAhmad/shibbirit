@@ -90,7 +90,7 @@
                             </div>
                         </div>
                     </div>
-                    {{-- <div role="tabpanel" class="tab-pane fade" id="messages_with_icon_title">
+                    <div role="tabpanel" class="tab-pane fade" id="messages_with_icon_title">
                         <div class="card">
                              
                             <div class="body">
@@ -124,7 +124,7 @@
                                 </form>
                             </div>
                         </div>
-                    </div> --}}
+                    </div>
                  
                 </div>
             </div>

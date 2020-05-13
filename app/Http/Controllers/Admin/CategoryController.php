@@ -43,38 +43,45 @@ class CategoryController extends Controller
              'categoryImage' => 'required|mimes:jpg,jpeg,png,gif',
          ]);
 
-        //get form image
-        $image=$request->file('categoryImage');
-        $slug=str_slug($request->category);
+        // //get form image
+        // $image=$request->file('categoryImage');
+        // $slug=str_slug($request->category);
 
-        if (isset($image)) {
-            //make unique name
-            $imageName=$slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
-
-            //check directory
-            if (!Storage::disk('public')->exists('category')) {
+        // if (isset($image)) {
+        //     //make unique name
+        //     $imageName=$slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+        
+        //     //check directory
+        //     if (!Storage::disk('public')->exists('category')) {
                  
-                Storage::disk('public')->makeDirectory('category');  
-            }
-             Storage::disk('public')->put('category/'.$imageName,$image);
-        }else {
+        //         Storage::disk('public')->makeDirectory('category');  
+        //     }
+        //      Storage::disk('public')->put('category/'.$imageName,$image);
+        // }else {
             
-             $imageName="default.png";
-        }
+        //      $imageName="default.png";
+        // }
      
         //inputing to database
         $category= new Category();
         $category->name=$request->category;
-        $category->slug=$slug;
-        $category->image=$imageName;
-        $pushed= $category->save();
+        $category->slug=str_slug($request->category);
+        
+        if ($category->save()) {
+           
+              if ($request->hasFile('categoryImage')) {
+                  $image=$request->file('categoryImage');
+                  $slug=str_slug($request->category);
+                  $imageName=$slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+                  $image->move(public_path('backend/images/category/'),$imageName);
 
-         if ($pushed) {
-             
-            return redirect()->back()->with('success','New Category Added with image');
+                  Category::find($category->id)->update(['image'=>$imageName]);
+              }
+            
+        }
 
-         }
-       
+           return redirect()->back()->with('success','Successfully New Category Added with image');
+  
     }
 
     /**
@@ -108,7 +115,45 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $ctg=Category::find($id);
+
+        $this->validate($request,[
+            'category' => 'required',
+            'categoryImage' => 'mimes:jpg,jpeg,png,gif',
+        ]);
+        
+                  
+                   
+        $ctg->name=$request->category;
+        
+        
+        if ($ctg->save()) {
+
+              if ($request->hasFile('categoryImage')) {
+
+                
+            //checking old image and deleting
+            if (file_exists('backend/images/category/'.$ctg->image) ) {
+                  
+                 unlink('backend/images/category/'.$ctg->image); 
+            }
+          
+                  $image=$request->file('categoryImage');
+                  $slug=str_slug($request->category);
+                  $imageName=$slug.'-'.uniqid().'.'.$image->getClientOriginalExtension();
+
+                  $image->move(public_path('backend/images/category/'),$imageName);
+
+                      Category::find($ctg->id)->update(['image'=>$imageName]);
+                  
+                  
+              
+              }
+            
+        }
+
+           return redirect()->back()->with('success','Succeessfully This Category Updated with image');
+  
     }
 
     /**
@@ -120,6 +165,13 @@ class CategoryController extends Controller
     public function destroy($id)
     {
           $delitem=Category::find($id);
+          
+            //checking old image and deleting
+            if (file_exists('backend/images/category/'.$delitem->image) ) {
+                  
+                unlink('backend/images/category/'.$delitem->image); 
+             }
+          
           if ($delitem->delete()) {
               
             return redirect()->back()->with('warning','one item Deleted!');

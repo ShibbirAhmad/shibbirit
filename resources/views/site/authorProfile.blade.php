@@ -102,8 +102,8 @@
 
         <div class="single-post info-area ">
 
-            <div class="about-area">
-                <h4 class="title ml-5"><b>{{ $author->name }}</b></h4>
+            <div class="about-area ">
+                <h4 class="title ml-5 "><b>{{ $author->name }}</b></h4>
                
                 <div class="media">
                      <div class="media-left">
@@ -112,9 +112,10 @@
 
                      <div class="media-body ml-3">
                          <h4  class="media-title bg-info">Sine Author {{ $author->created_at->toDateString() }}</h4>
-                         <p class="mt-2">{{ $author->about }} </p>
+                       
                         </div>
                 </div>
+                <p class="mt-2">{{ $author->about }} </p>
             </div>
 
         

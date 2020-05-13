@@ -18,14 +18,14 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
 
     <!-- Bootstrap Core Css -->
-    <link href="{{asset('backend/plugins/bootstrap/css/bootstrap.css')}}" rel="stylesheet">
+    <link href="{{asset('css/app.css')}}" rel="stylesheet">
 
     <!-- Waves Effect Css -->
     <link href="{{asset('backend/plugins/node-waves/waves.css ')}}" rel="stylesheet" />
 
     <!-- Animation Css -->
     <link href="{{asset('backend/plugins/animate-css/animate.css ')}}" rel="stylesheet" />
-    
+   
      <!--fontawesome icon-->
      <link rel="stylesheet" href="{{asset('css/fontawesome/all.min.css')}}">
     <!-- Morris Chart Css-->
@@ -43,7 +43,7 @@
    
 </head>
 
-<body class="theme-blue">
+<body class="theme-pink">
 
      <!--start header-->
       @include('backend.header')
@@ -59,8 +59,44 @@
 
 
     <section class="content">
-        <div class="container-fluid">
 
+         {{-- //this is for success result    --}}
+         @if (Session::has('success'))
+                            
+         <div class="alert alert-success">{{Session::get('success')}}</div>
+        
+         @endif
+
+       {{-- //this is for warning result --}}
+         @if (Session::has('warning'))
+         
+         <div class="alert alert-warning">{{Session::get('warning')}}</div>
+        
+         @endif
+
+         {{-- //this is for danger result --}}
+         @if (Session::has('danger'))
+         
+         <div class="alert alert-danger">{{Session::get('danger')}}</div>
+        
+         @endif
+
+         {{-- //display for all error result   --}}
+
+         @if (count($errors)> 0) 
+                
+                <ul class="list-group">
+                    
+                 @foreach ($errors->all() as $error)
+
+                  <li class="alert alert-warning list-group-item">{{$error}} </li> 
+                  
+                   @endforeach
+                    
+                </ul>
+         @endif
+        <div class="container-fluid">
+         
             @yield('content')
             
             
@@ -68,16 +104,14 @@
     </section>
   
 
-
+  
     <!-- Jquery Core Js -->
-    <script src="{{asset('backend/plugins/jquery/jquery.min.js ')}}"></script>
-
+    <script src="{{asset('js/jquery.min.js ')}}"></script>
+    <script src="{{asset('js/myScript.js ')}}"></script>
     <!-- Bootstrap Core Js -->
-    <script src="{{asset('backend/plugins/bootstrap/js/bootstrap.js ')}}"></script>
+    <script src="{{asset('js/app.js ')}}"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="{{asset('backend/plugins/bootstrap-select/js/bootstrap-select.js ')}}"></script>
-
+    
     <!-- Slimscroll Plugin Js --> 
     <script src="{{asset('backend/plugins/jquery-slimscroll/jquery.slimscroll.js ')}}"></script>
 
@@ -89,22 +123,7 @@
 
     <script src="{{asset('js/fontawesome/all.min.js')}}"></script>
 
-    <!-- Morris Plugin Js -->
-    <script src="{{asset('backend/ ')}}plugins/raphael/raphael.min.js"></script>
-    <script src="{{asset('backend/ ')}}plugins/morrisjs/morris.js"></script>
-
-    <!-- ChartJs -->
-    <script src="{{asset('backend/ ')}}plugins/chartjs/Chart.bundle.js"></script>
-
-    <!-- Flot Charts Plugin Js -->
-    <script src="{{asset('backend/plugins/flot-charts/jquery.flot.js ')}}"></script>
-    <script src="{{asset('backend/plugins/flot-charts/jquery.flot.resize.js ')}}"></script>
-    <script src="{{asset('backend/plugins/flot-charts/jquery.flot.pie.js ')}}"></script>
-    <script src="{{asset('backend/plugins/flot-charts/jquery.flot.categories.js ')}}"></script>
-    <script src="{{asset('backend/plugins/flot-charts/jquery.flot.time.js ')}}"></script>
-
-    <!-- Sparkline Chart Plugin Js -->
-    <script src="{{asset('backend/plugins/jquery-sparkline/jquery.sparkline.js ')}}"></script>
+    
 
     <!-- Custom Js -->
     <script src="{{asset('backend/js/admin.js ')}}"></script>
@@ -113,7 +132,10 @@
     <!-- Demo Js -->
     <script src="{{asset('backend/js/demo.js ')}}"></script>
 
-    @stack('js')
+    
+    
+
+    @yield('script')
 
 </body>
 </html>

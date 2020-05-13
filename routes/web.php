@@ -12,32 +12,112 @@
 
 */
 
-Route::get('/', function () {
-    return view('site.index');
-})->name('home');
 
+     Auth::routes();
 
-Auth::routes();
+//this general auth group route
+Route::group(['middleware' => 'auth'], function () {
+    
+     Route::post('favourite/{post}/add','FavouriteController@addFavourite')->name('post.favourite');
+     //Route for comment and it's replying
+     Route::post('comment/{post}','CommentController@commentStore')->name('comment.store'); 
+     Route::post('comment/reply/{comment}','ReplyController@replyStore')->name('reply.store'); 
+
+});
+
+Route::post('subscriber','SubscriberController@index')->name('subscriber');
 
 
 //this group for admin 
 Route::group(['as' => 'admin.','prefix' => 'admin' , 'namespace' => 'Admin', 'middleware'=> ['auth','admin']], function () {
     
-     Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@index']);  
+     Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@index']); 
+     Route::resource('tag', 'TagsController'); 
+     Route::resource('category', 'CategoryController'); 
+     Route::resource('post', 'PostController');
+     
+     //route for admin profile update 
+     Route::get('settings','SettingsController@index')->name('settings');
+     Route::PUT('profile-update/{id}','SettingsController@profileUpdate')->name('profile.update');
+     Route::PATCH('password-update/{id}','SettingsController@updatePassword')->name('update.password');
+
+     //route for receive favourite post and remove
+     Route::get('favourite','FavouriteController@index')->name('favourite');
+     Route::post('favourite/{post}','FavouriteController@removeFavourite')->name('post.favourite');
+     
+     //route for receive subscriber and destroy
+     Route::get('subscriber','SubscriberController@index')->name('subscriber');
+     Route::delete('subscriber/{id}','SubscriberController@destroy')->name('subscriber.destroy');
+
+     //route for post pending and approve
+     Route::get('pending/post','PostController@pending')->name('post.pending');
+     Route::PATCH('/post/{id}/approve','PostController@approve')->name('post.approve');
+     
+     //route for comment observe and destroy
+     Route::get('comments','CommentController@index')->name('comments');
+     Route::delete('comments/{id}','CommentController@destroy')->name('comment.destroy');
+
+     //route for find authors and delete
+     Route::get('author','AuthorsController@index')->name('author');
+     Route::delete('author/{id}','AuthorsController@destroy')->name('author.destroy');
 
 
 });
+
 
 
 //this route group for author
 Route::group(['as' => 'author.','prefix' => 'author' , 'namespace' => 'Author', 'middleware'=> ['auth','author']], function () {
     
     Route::get('dashboard',['as' => 'dashboard' , 'uses' => 'DashboardController@index']);  
+    Route::resource('post', 'PostController');
 
+    //route for receive favourite post and remove
+    Route::get('favourite','FavouriteController@index')->name('favourite');
+    Route::post('favourite/{post}','FavouriteController@removeFavourite')->name('post.favourite');
+     
+    //route for admin profile update 
+    Route::get('settings','SettingsController@index')->name('settings');
+    Route::PUT('profile-update/{id}','SettingsController@profileUpdate')->name('profile.update');
+    Route::PATCH('password-update/{id}','SettingsController@updatePassword')->name('update.password');
+  
+     //route for comment observe and destroy
+     Route::get('comments','CommentController@index')->name('comments');
+     Route::delete('comments/{id}','CommentController@destroy')->name('comment.destroy');
 
+   
 });
 
 
+     //Route for home page
+     Route::get('/','HomeController@index')->name('home');
+
+     //Route for postDetails
+     Route::get('post-details/{slug}','PostController@index')->name('post.details');
+
+     //Route for all posts
+     Route::get('posts','PostController@posts')->name('post.all');
+
+     //Route for search
+     Route::get('search','SearchController@search')->name('search');
+
+     //Route for display posts by it's category
+     Route::get('category/{slug}','PostController@categoryPost')->name('category.post');
+
+     //Route for display posts by it's category
+     Route::get('tag/{slug}','PostController@tagPost')->name('tag.post');
+     
+     //Route for post by author profile
+     Route::get('author/{username}','AuthorProfileController@index')->name('author.profile');
+
+view()->composer('site.layout.footer', function ($view) {
+
+     $categories= App\Category::all();
+     $tags=App\Tag::all();
+     $view->with('categories',$categories);
+     $view->with('tags',$tags);
+
+});
 
 
 
