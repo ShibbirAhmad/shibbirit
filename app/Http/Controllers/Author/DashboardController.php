@@ -18,9 +18,9 @@ class DashboardController extends Controller
         $popular_post=$user->posts()
                             ->withCount('comments')
                             ->withCount('favourite_to_users')
-                            ->orderBy('view_count')
-                            ->orderBy('comments_count')
-                            ->orderBy('favourite_to_users_count')
+                            ->orderBy('view_count','desc')
+                            ->orderBy('comments_count','desc')
+                            ->orderBy('favourite_to_users_count','desc')
                             ->take(5)->get();
 
         $total_views=$user->posts()->sum('view_count');

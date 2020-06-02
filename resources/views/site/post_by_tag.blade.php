@@ -37,7 +37,7 @@
 
                 <div class="blog-image"><img src="{{asset('backend/images/posts/'.$post->image )}} " alt="{{$post->title}}"></div>
 
-                <a class="avatar" href="#"><img src="{{asset('backend/images/profile/'.$post->user->image)}} " alt="Profile Image"></a>
+                <a class="avatar" href="{{route('author.profile',$post->user->username)}}"><img src="{{asset('backend/images/profile/'.$post->user->image)}} " alt="Profile Image"></a>
 
                 <div class="blog-info">
 

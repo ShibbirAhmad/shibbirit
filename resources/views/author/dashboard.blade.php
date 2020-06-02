@@ -44,7 +44,7 @@
                 <i class="material-icons">forum</i>
             </div>
             <div class="content">
-                <div class="text">TOTAL PENDING POST</div>
+                <div class="text">PENDING POST</div>
                 <div class="number count-to" data-from="0" data-to="{{ $total_pending_post}}" data-speed="1000" data-fresh-interval="20"></div>
             </div>
         </div>
@@ -55,7 +55,7 @@
                 <i class="material-icons">person_add</i>
             </div>
             <div class="content">
-                <div class="text">TOTAL VIEW IN POSTS</div>
+                <div class="text">VIEW IN POSTS</div>
                 <div class="number count-to" data-from="0" data-to="{{ $total_views}}" data-speed="1000" data-fresh-interval="20"></div>
             </div>
         </div>

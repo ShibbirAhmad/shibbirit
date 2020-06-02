@@ -46,11 +46,11 @@
                         <div class="post-info">
 
                             <div class="left-area">
-                                <a class="avatar" href="#"><img src="{{ asset('backend/images/profile/'.$post->user->image)}}" alt="Profile Image"></a>
+                                <a class="avatar" href="{{route('author.profile',$post->user->username)}}"><img src="{{ asset('backend/images/profile/'.$post->user->image)}}" alt="Profile Image"></a>
                             </div>
 
                             <div class="middle-area">
-                                <a class="name" href="#"><b>{{ $post->user->name }}</b></a>
+                                <a class="name" href="{{route('author.profile',$post->user->username)}}"><b>{{ $post->user->name }}</b></a>
                                 <h6 class="date">{{ $post->created_at->diffForHumans() }}</h6>
                             </div>
 
