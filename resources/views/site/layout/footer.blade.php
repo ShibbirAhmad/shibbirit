@@ -47,11 +47,14 @@
     
                         <h4 class="title"><b>SUBSCRIBE</b></h4>
                         <div class="input-area">
-                            <form action="{{route('subscriber')}}" method="POST" >
-                                @csrf
-                                <input class="email-input" type="email" name="email" placeholder="Enter your email">
-                                <button class="submit-btn" type="submit"><i class="fa fa-envelope fa-lg"></i></button>
-                            </form>
+                            <div class="form-inline">
+                                <form action="{{route('subscriber')}}" method="POST" >
+                                    @csrf
+                                    <input class="email-input form-control" type="email" name="email" placeholder="Enter your email">
+                                    <button class="submit-btn" type="submit"><i class="fa fa-envelope fa-lg"></i></button>
+                                </form>
+                            </div>
+                            
                         </div>
     
                     </div><!-- footer-section -->

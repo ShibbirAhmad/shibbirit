@@ -24,7 +24,7 @@ class FavouriteController extends Controller
          if ($isFavourite == 1) {
             
             $user->favourite_posts()->detach($postId);
-            return redirect()->back()->with('warning','this post remove from your favourite list');
+            return redirect()->back()->with('warning',' remove from favourite ');
          }
 
 

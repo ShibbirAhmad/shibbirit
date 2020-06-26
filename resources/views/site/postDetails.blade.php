@@ -42,7 +42,7 @@
                 <div class="main-post">
 
                     <div class="blog-post-inner">
-
+                         <article>
                         <div class="post-info">
 
                             <div class="left-area">
@@ -59,7 +59,7 @@
                         <h3 class="title"><a href="#"><b> {{ $post->title }}</b></a></h3>
                            
                         <div class="para">
-                            {!! html_entity_decode($post->body) !!}
+                            {!! html_entity_decode($post->body) !!} 
                         </div>
             
                         <ul class="tags">
@@ -108,7 +108,7 @@
                         </ul>
                     </div>
 
-
+                </article>
 
                 </div><!-- main-post -->
             </div><!-- col-lg-8 col-md-12 -->
@@ -116,10 +116,22 @@
             <div class="col-lg-4 col-md-12 no-left-padding">
 
                 <div class="single-post info-area">
-
-                    <div class="sidebar-area about-area">
-                        <h4 class="title"><b>About Author</b></h4>
-                        <p> {{ $post->user->about }} </p>
+                   
+                    <div class="col-sm-12 sidebar-area about-area">
+                       
+                        <div class="card bg-info">
+                            <div class="card-header">
+                           <div style="margin-top:35px;" class="left-area">
+                                <a class="avatar" href="{{route('author.profile',$post->user->username)}}"><img src="{{ asset('backend/images/profile/'.$post->user->image)}}" alt="Profile Image"></a>
+                            <h4 style="margin-top:-60px;margin-left:85px;"><b> About Author</b></h4>
+                            </div>
+                          </div>
+                        </div>
+                      <div style="padding-top:30px;border: 1px solid  #6CB2EB;border-radius:5px;" class="card-body   ">
+                          <p> {{ $post->user->about }} </p>
+                      </div>
+                        
+                     <div class="card-footer bg-info"></div> 
                     </div>
 
                   
@@ -167,7 +179,7 @@
                     
                                     @guest
                                     
-                                    <a onclick="return confirm('Login first to favourite this post');" href="#">
+                                    <a onclick="return confirm('Login first to add favourite');" href="#">
                                         <i class="fa fa-heart"></i>{{ $post->favourite_to_users->count() }}</a>
         
                                     @else 
@@ -185,8 +197,8 @@
                                     @endguest
         
                                 </li>
-                                <li><a href="#"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
-                                <li><a href="#"><i class="fa fa-eye"></i>{{ $r_post->view_count }}</a></li>
+                                <li><a href="{{ route('post.details',$r_post->slug) }}"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
+                                <li><a href="{{ route('post.details',$r_post->slug) }}"><i class="fa fa-eye"></i>{{ $r_post->view_count }}</a></li>
                             </ul>
                         </div><!-- blog-info -->
 
@@ -207,25 +219,28 @@
 
             <div class="col-lg-8 col-md-12">
                 @guest
-                <p class="bg-warning">your shuld be member of this site to post comment </p>
+                <p class="bg-warning">Firstly Register to post your comment </p>
              If already memeber then <h4 style="display:inline-block"> <a href="{{ route('login') }}">Login</a></h4> 
              & if new then <h4 style="display:inline-block"><a href="{{ route('register') }}">register</a></h4>
 
                 @else 
                 <div class="comment-form">
-                    {!! Form::open(['route' =>['comment.store',$post->id] ]) !!}
+                    <form  id="commentForm">
                         <div class="row">
 
+                            <input type="hidden" id="commentIdField" value="{{$post->id}}" name="postId">
+
                             <div class="col-sm-12">
-                                <textarea name="comment" rows="2" class="text-area-messge form-control"
+                                <textarea name="comment" rows="2" id="commentFiled" class="text-area-messge form-control"
                                     placeholder="Enter your comment" aria-required="true" aria-invalid="false"></textarea >
                             </div><!-- col-sm-12 -->
                             <div class="col-sm-12">
-                                <button class="submit-btn" type="submit" id="form-submit"><b>Submit</b></button>
+                                <input type="submit" class="submit-btn" value="Submit">
+                               
                             </div><!-- col-sm-12 -->
 
                         </div><!-- row -->
-                   {!! Form::close() !!}
+                    </form>
                 </div><!-- comment-form -->
 
                 @endguest
@@ -276,10 +291,13 @@
                                     <div class="card">
                                 
                                         <div class="body">
-                                            {!! Form::open(['route'=>['reply.store',$comment->id],'classs' => 'form-line']) !!}
+                                            <form id="replyForm" class="form-line" >
+                                            
+                                            <input type="hidden" value="{{ $comment->id }}" name="commentId">
                                             <textarea class="form-control" name="reply"  rows="2"></textarea>
-                                            {!! Form::submit('submit', ['class'=>'btn mt-2 btn-sm btn-success']) !!}
-                                            {!! Form::close() !!}
+                                          
+                                        <input type="submit" class="btn mt-2 btn-sm btn-success " value="Reply">
+                                        </form>
                                         </div>
                                     </div>
                                 </div>
@@ -352,5 +370,131 @@
 
 @push('js')
    
+          <script>
+           
+
+              $(function(){
+           
+           //this is for post comment store function 
+            $('#commentForm').submit(function(e){
+                e.preventDefault();
+
+                var data = $(this).serialize();
+                var url = '{{url('comment/add')}}'
+
+               $.ajaxSetup(
+                   {
+                      headers : {'X-CSRF-Token' : '{{csrf_token()}}' }
+                   })
+
+
+               $.ajax({ 
+                   url : url ,
+                   method : 'POST',
+                   data : data ,
+                   cache : false,
+                   success: function(response){
+                        if (response.success == "OK") {
+
+                          Swal.fire({
+                              type: 'success',
+                              text: "comment "+response.status + " successfully",
+                          });
+
+                      $('input[name = "postId"]').val(null)
+                      $('textarea').val(null)
+
+                      }else{
+
+                        Swal.fire({
+                                  type: 'error',
+                                  title: '<P style="color: red;">Oops...<p>',
+                                  text: response.errors,
+                                  footer: '<b> Something Wrong</b>'
+                              });
+                      }
+
+                   },
+                   error : function(error){ 
+                           
+
+                    console.log(error)
+                   
+                       
+                }   
+                   
+                })
+
+               
+
+
+            })
+
+
+
+
+
+           // this is for comment reply store function 
+            $('#replyForm').submit(function(e){
+                e.preventDefault();
+
+                var data = $(this).serialize();
+                var url = '{{url('comment/reply/add')}}'
+
+               $.ajaxSetup(
+                   {
+                      headers : {'X-CSRF-Token' : '{{csrf_token()}}' }
+                   })
+
+
+               $.ajax({ 
+                   url : url ,
+                   method : 'POST',
+                   data : data ,
+                   cache : false,
+                   success: function(response){
+                        if (response.success == "OK") {
+
+                          Swal.fire({
+                              type: 'success',
+                              text: "reply "+response.status + " successfully",
+                          });
+                     
+                      $('input[name => "commentId"]').val(null)
+                      $('textarea').val(null)
+                    
+
+                      }else{
+
+                        Swal.fire({
+                                  type: 'error',
+                                  title: '<P style="color: red;">Oops...<p>',
+                                  text: response.errors,
+                                  footer: '<b> Something Wrong</b>'
+                              });
+                      }
+
+                   },
+                   error : function(error){ 
+                           
+
+                    console.log(error)
+                   
+                       
+                }   
+
+                   
+                })
+
+        
+
+            })
+
+
+
+
+        });    
+
+          </script>
 
 @endpush

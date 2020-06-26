@@ -3,7 +3,7 @@
 
         <a href="#" class="logo"><img src="{{asset('site/images/logo.png ')}}" alt="Logo Image"></a>
 
-        <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="ion-navicon"></i></div>
+        <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="fa fa-th-large"></i></div>
 
         <ul class="main-menu visible-on-click" id="main-menu">
             <li><a href="{{route('home')}}">Home</a></li>
@@ -20,6 +20,8 @@
                  <li><a href="{{ route('author.dashboard') }}">Dashboard</a></li> 
                  @endif
             @endguest
+
+            <li><a href="{{ route('portfolio.shibbir') }}">My Portfolio</a></li>
 
         </ul><!-- main-menu -->
 

@@ -126,10 +126,20 @@
 @section('script')
 
 <script> 
+
 $(function () {
     //CKEditor
     CKEDITOR.replace('ckeditor');
     CKEDITOR.config.height = 300;
+
+
+//     CKEDITOR.replace('ckeditor', {
+
+//    filebrowserUploadUrl: "{{route('admin.post.store', ['_token' => csrf_token() ])}}",
+
+//    filebrowserUploadMethod: 'form'
+
+//    });
 
    
 });
@@ -141,3 +151,5 @@ $(function () {
     <script src="{{asset('backend/plugins/ckeditor/ckeditor.js ')}}"></script>
 
 @endsection()
+
+

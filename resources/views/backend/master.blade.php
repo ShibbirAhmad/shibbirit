@@ -19,6 +19,14 @@
 
     <!-- Bootstrap Core Css -->
     <link href="{{asset('css/app.css')}}" rel="stylesheet">
+    
+        <!-- bangla font -->
+        
+     
+     <link href="{{asset('font/BalooDa2-Medium.ttf ')}}" rel="stylesheet"  type="text/css" />
+
+     <link href="{{asset('font/BalooDa2-Regular.ttf ')}}" rel="stylesheet"  type="text/css" />
+
 
     <!-- Waves Effect Css -->
     <link href="{{asset('backend/plugins/node-waves/waves.css ')}}" rel="stylesheet" />

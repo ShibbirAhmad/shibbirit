@@ -20,8 +20,8 @@ Route::group(['middleware' => 'auth'], function () {
     
      Route::post('favourite/{post}/add','FavouriteController@addFavourite')->name('post.favourite');
      //Route for comment and it's replying
-     Route::post('comment/{post}','CommentController@commentStore')->name('comment.store'); 
-     Route::post('comment/reply/{comment}','ReplyController@replyStore')->name('reply.store'); 
+     Route::post('comment/add','CommentController@commentStore')->name('comment.store'); 
+     Route::post('comment/reply/add','ReplyController@replyStore')->name('reply.store'); 
 
 });
 
@@ -36,6 +36,11 @@ Route::group(['as' => 'admin.','prefix' => 'admin' , 'namespace' => 'Admin', 'mi
      Route::resource('category', 'CategoryController'); 
      Route::resource('post', 'PostController');
      
+
+     //route for ckeditor
+     // Route::get('ckeditor', 'CkeditorController@index');
+     // Route::post('ckeditor/upload', 'CkeditorController@upload')->name('ckeditor.upload');
+
      //route for admin profile update 
      Route::get('settings','SettingsController@index')->name('settings');
      Route::PUT('profile-update/{id}','SettingsController@profileUpdate')->name('profile.update');
@@ -89,8 +94,13 @@ Route::group(['as' => 'author.','prefix' => 'author' , 'namespace' => 'Author', 
 });
 
 
+
+
+
      //Route for home page
      Route::get('/','HomeController@index')->name('home');
+     // Route for get data by ajax
+     Route::get('load-more/data','HomeController@getDataByAjax');
 
      //Route for postDetails
      Route::get('post-details/{slug}','PostController@index')->name('post.details');
@@ -109,6 +119,14 @@ Route::group(['as' => 'author.','prefix' => 'author' , 'namespace' => 'Author', 
      
      //Route for post by author profile
      Route::get('author/{username}','AuthorProfileController@index')->name('author.profile');
+
+     //Route for my portfolio
+     Route::get('portfolio','PortfolioController@index')->name('portfolio.shibbir');
+
+
+
+     
+
 
 view()->composer('site.layout.footer', function ($view) {
 

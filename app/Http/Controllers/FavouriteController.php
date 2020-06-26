@@ -14,11 +14,11 @@ class FavouriteController extends Controller
 
          if ($isFavourite == 0) {
              $user->favourite_posts()->attach($postId);
-             return redirect()->back()->with('success','this post added to your favourite list');
+             return redirect()->back()->with('success',' post added to your favourite');
          } else {
             
             $user->favourite_posts()->detach($postId);
-            return redirect()->back()->with('warning','this post remove from your favourite list');
+            return redirect()->back()->with('warning','removed from your favourite');
          }
          
 

@@ -41,6 +41,7 @@
             </div><!-- swiper-slide -->
 
             @endforeach
+         
 
         </div><!-- swiper-wrapper -->
 
@@ -52,7 +53,7 @@
 
 @section('content')
     
-<div class="row">
+<div  id="post_displayer" class="row">
 
     @foreach ($posts as $post)
         
@@ -74,7 +75,7 @@
                     
                             @guest
                             
-                            <a onclick="return confirm('Login first to favourite this post');" href="#">
+                            <a onclick="return confirm('Login first to add favourite');" href="#">
                                 <i class="fa fa-heart"></i>{{ $post->favourite_to_users->count() }}</a>
 
                             @else 
@@ -92,8 +93,8 @@
                             @endguest
 
                         </li>
-                        <li><a href="#"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
-                        <li><a href="#"><i class="fa fa-eye"></i>{{ $post->view_count }}</a></li>
+                        <li><a href="{{route('post.details',$post->slug)}}"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
+                        <li><a href="{{route('post.details',$post->slug)}}"><i class="fa fa-eye"></i>{{ $post->view_count }}</a></li>
                     </ul>
 
                 </div><!-- blog-info -->
