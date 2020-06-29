@@ -53,14 +53,14 @@
 
 @section('content')
     
-<div  id="post_displayer" class="row">
+<div   class="row">
 
     @foreach ($posts as $post)
         
    
     <div class="col-lg-4 col-md-6">  
         <div class="card h-100">
-            <div class="single-post post-style-1">
+            <div  class="single-post post-style-1">
 
                 <div class="blog-image"><img src="{{asset('backend/images/posts/'.$post->image )}} " alt="{{$post->title}}"></div>
 
@@ -98,13 +98,27 @@
                     </ul>
 
                 </div><!-- blog-info -->
+
             </div><!-- single-post -->
+
         </div><!-- card -->
     </div><!-- col-lg-4 col-md-6 -->
     
      @endforeach
 
+                             
 </div><!-- row -->
+
+                       <div id="hide_loader" class="loader text-center">
+                           <button id="load_more" class="btn btn-info"><b>Load More..</b></button>
+                       </div>
+
+<!--in this row will display ajax loaded posts --> 
+<div id="post_displayer" class="row">
+     
+  
+
+ </div>
 
 
 @endsection

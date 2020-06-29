@@ -39,6 +39,12 @@
         <link rel="stylesheet" href="{{asset('site/portfolio/css/responsive.css ')}} " />
 
         <script src="{{asset('site/portfolio/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js ')}} "></script>
+    
+    <style>
+        
+        p{font-size:16px; }
+
+    </style>
     </head>
     <body data-spy="scroll" data-target=".navbar-collapse">
 
@@ -60,45 +66,43 @@
                                                 <h3>My Clients Are My First Priority</h3>
                                                 <h1>WELCOME TO SHIBBIR-IT</h1>
                                                 <div class="separator"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting indMEtry. Lorem Ipsum has been the indMEtry's 
-                                                    standard dummy text ever since the 1500s, when an unknown printer took a galley 
-                                                    of type and scrambled it to make a type specimen book.</p>
+                                                <p>Hi! i am Shibbir Ahmad.I am serviceing as programmer of Web Developing technology base in PHP,Laravel & Ajax(javaScript).
+                                                    I will develop your application with emphasis security vulnarabilities AND design customize by bootstrap framework as you want.
+                                                    Further-more, i will still support you if you make once work relation with me.  </p>
                                                 <div class="home_btn">
-                                                    <a href="https://bootstrapthemes.co" class="btn btn-lg m_t_10">GET STARTED NOW</a>
-                                                    <a href="https://bootstrapthemes.co" class="btn btn-default">LEARN MORE</a>
+                                                    <a href="#" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
+                                                    <a href="#service" class="btn btn-default">CLICK TO KNOW MORE </a>
                                                 </div>
 
                                             </div> 
                                         </div>
                                         <div class="single_home_slider">
                                             <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                                <h3>My Clients Are My First Priority</h3>
-                                                <h1>WELCOME TO SHIBBIR-IT</h1>
+                                                <h3>My Clients Satisfication Are My Best Satisfication</h3>
+                                                <h1>WELCOME TO SHIBBIR-IT </h1>
                                                 <div class="separator"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting indMEtry. Lorem Ipsum has been the indMEtry's 
-                                                    standard dummy text ever since the 1500s, when an unknown printer took a galley 
-                                                    of type and scrambled it to make a type specimen book.</p>
+                                                <p> Backend Developer base in PHP,Laravel & Ajax.
+                                                    I will develop your application with emphasis security vulnarabilities AND design customize as you want.
+                                                    Further-more, i will still support you if you make once work relation with me. </p>
                                                 <div class="home_btn">
-                                                    <a href="https://bootstrapthemes.co" class="btn btn-lg m_t_10">GET STARTED NOW</a>
-                                                    <a href="https://bootstrapthemes.co" class="btn btn-default">LEARN MORE</a>
+                                                    <a href="#" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
+                                                    <a href="#feature" class="btn btn-default">CLICK TO KNOW MORE</a>
                                                 </div>
 
-                                            </div>
+                                            </div> 
                                         </div>
-                                        <div class="single_home_slider">
-                                            <div class="main_home wow fadeInUp" data-wow-duration="700ms">
-                                                <h3>My Clients Are My First Priority</h3>
-                                                <h1>WELCOME TO SHIBBIR-IT</h1>
-                                                <div class="separator"></div>
-                                                <p>Lorem Ipsum is simply dummy text of the printing and typesetting indMEtry. Lorem Ipsum has been the indMEtry's 
-                                                    standard dummy text ever since the 1500s, when an unknown printer took a galley 
-                                                    of type and scrambled it to make a type specimen book.</p>
-                                                <div class="home_btn">
-                                                    <a href="https://bootstrapthemes.co" class="btn btn-lg m_t_10">GET STARTED NOW</a>
-                                                    <a href="https://bootstrapthemes.co" class="btn btn-default">LEARN MORE</a>
-                                                </div>
-
+                                        <div class="main_home wow fadeInUp" data-wow-duration="700ms">
+                                            <h3>I hope i will provied you best service as you want</h3>
+                                            <h1>WELCOME DEAR VISITORS </h1>
+                                            <div class="separator"></div>
+                                            <p>Hi! i am Shibbir Ahmad.I am serviceing as programmer of Web Developing technology base in PHP,Laravel & Ajax(javaScript).
+                                                I will develop your application with emphasis security vulnarabilities AND design customize by bootstrap framework as you want.
+                                                Further-more, i will still support you if you make once work relation with me.  </p>
+                                            <div class="home_btn">
+                                                <a href="#" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
+                                                <a href="#portfolio" class="btn btn-default">CLICK TO SEE PORTFOLIO PROJECT</a>
                                             </div>
+
                                         </div>
                                     </div>
                                 </div>
@@ -124,10 +128,11 @@
                                         <i class="fa fa-clone"></i>
                                     </div>
 
-                                    <h4>SLEEK DESIGN</h4>
+                                    <h4> DESIGN CUSTOMIZE</h4>
                                     <div class="separator3"></div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. 
-                                        Lorem Ipsum has been the indMEtry.</p>
+                                    <p> I have skill in structure language of web application(HTML) AND it's design technology css.
+                                        Also,  I have good experience of using popular design framework bootstrap. 
+                                        i customize design by bootstrap & CSS.</p>
                                 </div>
                             </div>
 
@@ -139,8 +144,9 @@
 
                                     <h4>CLEAN CODE</h4>
                                     <div class="separator3"></div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. 
-                                        Lorem Ipsum has been the indMEtry.</p>
+                                    <p>Clean code is an important issue of any application.Because, 
+                                     in futute necessity,  base application will be editing or updating . attaching code comment  are my regular habits.
+                                      code comment is needed so that other programmer can understand what i have done  </p>
                                 </div>
                             </div>
 
@@ -151,8 +157,9 @@
                                     </div>
                                     <h4>CREATIVE IDEAS</h4>
                                     <div class="separator3"></div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. 
-                                        Lorem Ipsum has been the indMEtry.</p>
+                                    <p>Alawys, i try to add new features of technology. 
+                                        when i write code then try to follow coding standard.
+                                         i don't like fully copy other programmer.Firstly, i try to do something from myself. </p>
                                 </div>
                             </div>
 
@@ -164,8 +171,8 @@
 
                                     <h4>FREE SUPPORT</h4>
                                     <div class="separator3"></div>
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. 
-                                        Lorem Ipsum has been the indMEtry.</p>
+                                    <p>I will provide you free support, if work is less than one hour. 
+                                        if i can't slove any problem then i don't feel shammy to look other help and i like to guide other.  </p>
                                 </div>
                             </div>
 
@@ -183,22 +190,22 @@
                         <div class="main_history">
                             <div class="col-sm-6">
                                 <div class="single_history_img">
-                                    <img src="{{asset('site/portfolio/images/stab1.png ')}}" alt="" />
+                                    <img src="{{asset('site/portfolio/images/stab11.png ')}}" alt="" />
                                 </div>
                             </div>
 
                             <div class="col-sm-6">
                                 <div class="single_history_content">
                                     <div class="head_title">
-                                        <h2>My HISTORY</h2>
+                                        <h2>My CODING EXPERIENCE</h2>
                                     </div>
-                                    <p>It is a long established fact that a reader will be distracted by the readable content of a page 
-                                        when looking at its layout. The point of MEing Lorem Ipsum is that it has a more-or-less normal 
-                                        distribution of letters, as opposed to MEing 'Content here, content here', making it 
-                                        look like readable English. Many desktop publishing packages and web page editors now MEe 
-                                        Lorem Ipsum as their default model text, and a search for 'lorem ipsum' </p>
+                                    <p>I am Generative backend Developer. i have skill in Web Design & Development Technology.
+                                         My base programming language is { ROW/CORE PHP} and has deep skill it's popular framework Laravel.
+                                        i like object oriented programming language but, still love Scripting language. 
+                                        At present, i have basic skill in javaScript & Ajax and in future, goal is to gain deep skill in javaScript and it's all frameworks.
+                                       point to be noted i am not professional designer but, i have an experience in all design technology(HTML,CSS & BOOTSTARP)  </p>
 
-                                    <a href="" class="btn btn-lg">BROWSE My WORK</a>
+                                    <a href="https://github.com/ShibbirAhmad" class="btn btn-lg">BROWSE My WORK IN GITHUB </a>
                                 </div>
                             </div>
                         </div>
@@ -226,8 +233,7 @@
                                                 <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
                                                     <article class="single_service_right_text">
                                                         <h4>WEB DESIGN</h4>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting indMEtry. 
-                                                            Lorem Ip sum has been the indMEtry's standard dummy text ever.</p>
+                                                        <p>Are you looking for a designer who will convert PSD template to html template ? yse, i am here i can design web site or web application by html,css and bootstrap. i service device responsive site or application. Also, i service best design customization as client want.    </p>
                                                     </article>
                                                 </div>
                                                 <div class="col-sm-1 col-xs-1">
@@ -244,8 +250,10 @@
                                                 <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1">
                                                     <article class="single_service_right_text">
                                                         <h4>WEB DEVELOPMENT</h4>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting indMEtry. 
-                                                            Lorem Ip sum has been the indMEtry's standard dummy text ever.</p>
+                                                        <p>Firstly, i am greeting you . i hope that i will be able to provide you best service in backend development.
+                                                            
+                                                            i am Shibbir Ahmad.I am serviceing as programmer of Web Developing technology base in PHP,Laravel & Ajax(javaScript).I will develop your application with emphasis security vulnarabilities AND design customize by bootstrap framework as you want.Further-more, i will still support you if you make once work relation with me.  </p>
+                                                    </p>
                                                     </article>
                                                 </div>
                                                 <div class="col-sm-1 col-xs-1">
@@ -262,8 +270,8 @@
                                                 <div class="col-sm-10 col-sm-offset-1 col-xs-9 col-xs-offset-1 margin-bottom-20">
                                                     <article class="single_service_right_text">
                                                         <h4>DESIGN & DEVELOPMENT</h4>
-                                                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting indMEtry. 
-                                                            Lorem Ip sum has been the indMEtry's standard dummy text ever.</p>
+                                                        <p>From a long term i am working with web technology.i have deep experince in the common filed of Design and Development technology.Also, i am familiar with  all advance technology.
+                                                        </p>
                                                     </article>
                                                 </div>
                                                 <div class="col-sm-1 col-xs-1">
@@ -418,9 +426,10 @@
                     <div class="row">
                         <div class="main_study_area sections">
                             <div class="head_title text-center">
-                                <h2>CASE STUDY</h2>
+                                <h2>Learn with shibbir-it</h2>
                                 <div class="subtitle">
-                                    A brief story about how this process works, keep an eye till the end.
+                                            <p style="font-size:22px;"> A brief story about how i share my knowldge , 
+                                    keep an eye to learn trick and tricks about (ict) information and communication technology. </p>
                                 </div>
                                 <div class="separator"></div>
                             </div>
@@ -434,11 +443,12 @@
                                                     <div class="s_study_icon">
                                                         <i class="fa fa-lightbulb-o"></i>  
                                                     </div>
-                                                    <h4>aCCUMULATE CREATIVE IDEAS</h4>
+                                                    <h4>CONTACT FOR LEARNING (ICT & PROGRAMME) VIA ONLINE CLASS  </h4>
                                                     <div class="separator3"></div>
-                                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting let. Lorem Ipsum has been the indMEtry.
-                                                        Lorem Ipsum is simply dummy text of the printing and typesetting let.
-                                                        Lorem Ipsum has been the indMEtry Printing and typelorem Ipsum has been the setting let.</p>
+                                                    <p> I like to teach other. i serve teaching to intermadiate students.if you are interested to slove your ict problem then contact with me,
+                                                       i will try to make easy every section by  theorical and  practically coding . Note that  i have deep knowldge about your ict book .
+                                                        Further-more, you can learn more form  articles of this site that i have posted.
+                                                        Also, you can post any probelm here  </p>
 
                                                     <a href="" class="btn btn-lg">Focus this</a>
                                                 </div>
@@ -529,9 +539,9 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <div class="head_title textwhite text-center margin-top-80">
-                                    <h2>Visit My out world Profile</h2>
+                                    <h2>visit and connect with social media</h2>
                                     <div class="subtitle">
-                                        Meet the craziest team. Share yMy thoughts with them.
+                                     <h4>Here is the social medial quick link. </h4>  
                                     </div>
                                     <div class="separator"></div>
                                 </div><!-- End off Head_title -->
@@ -540,57 +550,63 @@
                                     <ul>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team2.jpg ')}} " alt="" />
+                                                <img src="{{asset('site/portfolio/images/team1.png ')}} " alt="" />
                                             </div>
                                             <div class="single_team_text">
-                                                <h4>Facebook</h4>
-                                                <a href=""><i class="fa fa-facebook"></i></a>
-                                           
+                                                <h4>  <a href="">Facebook</a> <i class="fa fa-facebook"></i></h4>
+                                               
+                                                 <p>Follow</p>
+                                                 <p>Friend</p>
+                                                 <p>Message</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team2.jpg ')}}" alt="" />
+                                                <img src="{{asset('site/portfolio/images/team2.png ')}}" alt="" />
                                             </div>
                                             <div class="single_team_text">
-                                                <h4>Linkedin</h4>
-                                                 <a href=""><i class="fa fa-twitter"></i></a>
-                                            <a href=""><i class="fa fa-linkedin"></i></a>
-                                   
-                                                <p>Follow</p>
-                                                <p>Follow</p>
+                                                <h4><a href="">Linkedin <i class="fa fa-linkedin"></i></a></h4>
+                                            
+                                             <p>Connect</p>  
+                                             <p>Comment</p>  
+                                             <p>Message</p>
+                                             
                                             </div>
                                         </li>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team2.jpg ')}}" alt="" />
+                                                <img src="{{asset('site/portfolio/images/team3.png ')}}" alt="" />
                                             </div>
                                             <div class="single_team_text">
-                                                <h4>Git Hub</h4>
+                                                <h4> <a href="">Git Hub <i class="fa fa-git"></i></a></h4>
                                                      
-                                                   <a href=""><i class="fa fa-git"></i></a>
+                                                <p>Follow</p> 
+                                                <p>Star</p> 
+                                                <p>york</p> 
+                                               
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="single_team_img">
+                                                <img src="{{asset('site/portfolio/images/team5.png ')}}" alt="" />
+                                            </div>
+                                            <div class="single_team_text">
+                                                <h4> <a href="">Skype <i class="fa fa-skype"></i></a></h4>
+                                                <p>chat</p>   
                                                 <p>Follow</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team2.jpg ')}}" alt="" />
+                                                <img src="{{asset('site/portfolio/images/team4.png ')}}" alt="" />
                                             </div>
                                             <div class="single_team_text">
-                                                <h4>Skype</h4>
-                                                    <a href=""><i class="fa fa-instagram"></i></a>
-                                                <p>Follow</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team2.jpg ')}}" alt="" />
-                                            </div>
-                                            <div class="single_team_text">
-                                                <h4>youtube </h4>
-                                                 <a href=""><i class="fa fa-youtube"></i></a>
-
-                                                <p>Follow</p>
+                                                <h4>  <a href="">youtube <i class="fa fa-youtube"></i></a> </h4>
+                                               
+                                                <p>Subscribe</p>
+                                                <p>Share</p>
+                                                <p>Comment</p>
+                                               
                                             </div>
                                         </li>
                                     </ul>
@@ -607,43 +623,65 @@
             <section id="contact" class="contact">
                 <div class="container">
                     <div class="row">
-                        <div class="col-sm-12">
+                        <div class="col-md-12 col-sm-12 ">
                             <div class="contact_contant sections">
                                 <div class="head_title text-center">
                                     <h2>kEEP IN TOUCH</h2>
                                     <div class="subtitle">
-                                        Nullam sit amet odio eu est aliquet euismod a a urna. Proin eu urna sMEcipit, dictum quam nec.  
+                                       <p>contact if need any help or support with it related</p>
                                     </div>
                                     <div class="separator"></div>
                                 </div><!-- End off Head_title -->
                                 <div class="row">
-                                    <div class="col-sm-6">
+                                    <div class=" col-md-6 col-sm-6 ">
                                         <div class="main_contact_info">
                                             <div class="row">
                                                 <div class="contact_info_content padding-top-90 padding-bottom-60 p_l_r">
                                                     <div class="col-sm-12">
                                                         <div class="single_contact_info">
-                                                            <div class="single_info_text">
+                                                            <div class="single_info_text text-center">
+                                                                
                                                                 <h3>My ADDRESS</h3>
-                                                                <h4>HoMEe #13, Streat road, Sydney 
-                                                                    2310 AMEtralia</h4>
+                                                                <h4>Dhaka,Bangladesh</h4>
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="single_contact_info">
-                                                            <div class="single_info_text">
-                                                                <h3>CALL ME</h3>
-                                                                <h4>+ 880 168 109 1425</h4>
-                                                                <h4>+ 0216809142</h4>
+                                                            <div class="single_info_text text-center">
+
+                                                                <div style="border-radius:5px" class="card bg-info ">
+                                                                    <div class="card-header"> <h3>CALL ME</h3> </div>
+                                                                </div>
+                                                                <div style="border: 1px solid  rgb(45, 168, 230);border-radius:5px;" class="card-body ">
+                                                                
+                                                                <h4>+ 88 01737 481778</h4>
+                                                                <h4>+ 88 01856 920229</h4>
+                                                                <h4>+ 88 01759 416979</h4>                        
+                                                            
+                                                               </div>
+                                                             
+                                                                <div style="height:13px;border-radius:5px;" class="card-footer bg-info"></div> 
+
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="col-sm-12">
+                                                    <div class="col-sm-12 ">
                                                         <div class="single_contact_info">
-                                                            <div class="single_info_text">
-                                                                <h3>EMAIL ME</h3>
-                                                                <h4>contactME@email.com</h4>
+                                                            <div class="single_info_text text-center">
+                                                                
+                                                                <div style="border-radius:5px" class="card bg-info ">
+                                                                    <div class="card-header"><h3>EMAIL ME</h3> </div>
+                                                                </div>
+                                                                <div style="border: 1px solid  rgb(49, 178, 243);border-radius:5px;" class="card-body ">
+                                                                    <h5  style="font-size: 16px">shibbirahmad920229@gmail.com</h5>
+
+                                                                    <h5  style="font-size: 16px;margin-top:5px;">shibbirahmedcomputer@gmail.com</h5>
+    
+                                                                    <h5  style="font-size: 16px;margin-top:5px;">shibbirahmad416979@gmail.com</h5>
+                                                                </div>
+                                                             
+                                                                <div style="height:13px;border-radius:5px" class="card-footer bg-info"></div> 
                                                             </div>
                                                         </div>
                                                     </div>
@@ -652,7 +690,7 @@
                                         </div>
                                     </div> 
 
-                                    <div class="col-sm-6">
+                                    <div  class="col-sm-6 col-md-6">
                                         <div class="single_contant_left padding-top-90 padding-bottom-90">
                                             <form action="#" id="formid">
                                                 <div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
@@ -660,7 +698,7 @@
                                                     <div class="row">
                                                         <div class="col-sm-12">
                                                             <div class="form-group">
-                                                                <input type="text" class="form-control" name="name" placeholder="First Name" required="">
+                                                                <input type="text" class="form-control" name="name" placeholder="Your Name" required="">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -706,10 +744,9 @@
                             <div class="row">
                                 <div class="main_trial">
                                     <div class="col-sm-12">
-                                        <h2>Let's Get Hire Me. <span>It's !</span></h2>
-                                        <h4> projects. Pay if you need more. 
-                                            Cancel anytime. No catches projects. Pay if you need more. 
-                                            Cancel anytime. No catches.</h4>
+                                        <h2>Let's Hire Me. <span>It's easy to contact with me</span></h2>
+                                        <h4> Life will be easy if you have source code.</h4>
+                                        <h4> Think twice code once.</h4>
                                         <a href="" class="btn btn-lg">start make work relation</a>
                                     </div>
                                 </div>
@@ -740,7 +777,7 @@
 
                                     <div class="col-sm-6 col-xs-12">
                                         <div class="copyright_text">
-                                            <p class=" wow fadeInRight" data-wow-duration="1s">Made with <i class="fa fa-heart"></i> by <a href="https://bootstrapthemes.co">Bootstrap Themes</a>2016. All Rights Reserved</p>
+                                            <p class=" wow fadeInRight" data-wow-duration="1s"> <i class="fa fa-heart"></i>Developoed by Shibbir Ahmad . All Rights Reserved in 2020</p>
                                         </div>
                                     </div>
                                 </div>

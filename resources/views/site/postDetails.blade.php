@@ -460,7 +460,7 @@
                               text: "reply "+response.status + " successfully",
                           });
                      
-                      $('input[name => "commentId"]').val(null)
+                      $('input[name = "commentId"]').val(null)
                       $('textarea').val(null)
                     
 

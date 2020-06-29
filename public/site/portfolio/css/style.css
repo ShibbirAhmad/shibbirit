@@ -15,7 +15,7 @@ body {
     width: 100%;
     padding: 0;
     margin-left: 0;
-    margin-right: 0;
+    margin-right: 0; 
     font-weight: 300;
     width:100%;
     font-family: 'ralewayregular';
@@ -1376,10 +1376,10 @@ li .single_team_text p{
     box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.01);
 }
 .contact_info_content h3{
-    color:#e74e3e;
+    color:#ec8729;
     font-family: 'Source Sans Pro', sans-serif;
     font-weight: 600;
-    margin-bottom: 19px;
+    margin-bottom:0px;
 }
 .contact_info_content h4{
     font-family: 'Open Sans', sans-serif;
@@ -1395,7 +1395,7 @@ li .single_team_text p{
     box-shadow: 0px 0px 0px 3px rgba(0, 0, 0, 0.01);
 }
 .single_contact_info{
-    margin-bottom:45px;
+    margin-bottom:34px;
     overflow: hidden;
 }
 
