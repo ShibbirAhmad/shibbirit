@@ -156,6 +156,8 @@ Author URI: http://www.bootstrapthemes.co
         right:0%;
         background: rgba(255, 255, 255, 0.85);
     }
+    .p_img_positon {margin-right:0px;}
+
     #portfoliowork {  
         -webkit-column-count: 1; 
         -moz-column-count: 1;
@@ -209,6 +211,8 @@ Author URI: http://www.bootstrapthemes.co
 
 /* Landscape phones and smaller */
 @media (max-width: 479px) {
+
+
     html {
         font-size: 65%;
     }

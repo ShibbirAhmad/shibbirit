@@ -43,6 +43,8 @@
     <style>
         
         p{font-size:16px; }
+        .p_img_positon {margin-bottom:100px;padding-right:20px;}
+
 
     </style>
     </head>
@@ -299,13 +301,14 @@
             </section><!-- End of service Section -->
 
 
+          
             <section id="portfolio" class="portfolio sections">
-                <div class="container-fluid">
+                <div class="container-fluid bg-info ">
                     <div class="row">
                         <div class="main_portfolio">
                             <div class="col-sm-12">
                                 <div class="head_title text-center">
-                                    <h2>Implemented Project</h2>
+                                    <h2>Implemented Project By Myself</h2>
                                     <div class="subtitle">
                                         It has survived not only five centuries, but also the leap scrambled it to make a type.
                                     </div>
@@ -315,97 +318,139 @@
                             <div class="work_menu text-center">
                                 <div id="filters" class="toolbar mb2 mt2">
                                     <button class="btn-md fil-cat filter active" data-filter="all">ALL APPLICATION </button>/
-                                    <button class="btn-md fil-cat filter" data-rel="web" data-filter=".web">BLOG </button>/
-                                    <button class="btn-md fil-cat filter" data-rel="design" data-filter=".design">TRAVEL </button>/
-                                    <button class="btn-md fil-cat filter" data-rel="flyers" data-filter=".flyers">E-COMMERCE </button>/
-                                    <button class="btn-md fil-cat filter" data-rel="bcards" data-filter=".bcards">EDUCATION</button>/
-                                    <button class="btn-md fil-cat filter" data-rel="photo" data-filter=".photo">PORTFOLIO</button>/
-                                    <button class="btn-md fil-cat filter" data-rel="video" data-filter=".video">NEWS</button>
+                                    <button class="btn-md fil-cat filter" data-rel="blog" data-filter=".blog">BLOG </button>/
+                                    <button class="btn-md fil-cat filter" data-rel="portfolio" data-filter=".portfolio">PORTFOLIO </button>/
+                                    <button class="btn-md fil-cat filter" data-rel="e-commerce" data-filter=".e-commerce">E-COMMERCE </button>/
+                                    <button class="btn-md fil-cat filter" data-rel="business" data-filter=".business">BUSINESS</button>/
+                                    <button class="btn-md fil-cat filter" data-rel="travel" data-filter=".travel">TRAVEL</button>/
+                                   
                                 </div> 
 
                             </div>
 
                             <div style="clear:both;"></div>     
                             <div id="portfoliowork"> 
-                                <div class="single_portfolio tile scale-anm web grid-item-width2 video" >
-                                    <img src="{{asset('site/portfolio/images/pf1.jpg ')}}" alt="" />
-                                    <a href="{{asset('site/portfolio/images/pf1.jpg ')}}" class="portfolio-img">
+                                
+                                <div class="single_portfolio tile scale-anm blog grid-item-width2 " >
+                                    <img class="p_img_positon" src="{{asset('site/portfolio/images/blog1.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/blog1.png')}} " class="portfolio-img">
                                         <div class="grid_item_overlay">
                                             <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
+                                            <h3>Advance Blog Site</h3>
+                                            <p>Backedend Developoed by Laravel Application and used javaScript, Ajax  </p>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="single_portfolio tile scale-anm bcards photo" >
-                                    <img src="{{asset('site/portfolio/images/pf2.jpg ')}} " alt="" />
-                                    <a href="assets/images/pf2.jpg" class="portfolio-img">
+                                
+                                <div class="single_portfolio tile scale-anm portfolio " >
+                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/portfolio.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/porfolio.png')}} " class="portfolio-img">
                                         <div class="grid_item_overlay">
                                             <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
+                                            <h3>Portfolio Site</h3>
+                                            <p>Backedend Developoed by Laravel Application </p>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="single_portfolio tile scale-anm web video">
-                                    <img src="{{asset('site/portfolio/images/pf3.jpg ')}}" alt="" />
-                                    <a href="{{asset('site/portfolio/images/pf3.jpg ')}}" class="portfolio-img">
+                                
+                                
+                                <div class="single_portfolio tile scale-anm blog" >
+                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/blog3.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/blog3.png')}} " class="portfolio-img">
                                         <div class="grid_item_overlay">
                                             <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="single_portfolio tile scale-anm web photo" >
-                                    <img src="{{asset('site/portfolio/images/pf4.jpg ')}}" alt="" />
-                                    <a href="{{asset('site/portfolio/images/pf4.jpg ')}}" class="portfolio-img">
-                                        <div class="grid_item_overlay">
-                                            <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="single_portfolio tile scale-anm bcards design" >
-                                    <img src="{{asset('site/portfolio/images/pf5.jpg ')}}" alt="" />  
-                                    <a href="{{asset('site/portfolio/images/pf5.jpg ')}}" class="portfolio-img">
-                                        <div class="grid_item_overlay">
-                                            <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
+                                            <h3>Simple Blog Site</h3>
+                                            <p>Backedend Developoed by Laravel Application </p>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="single_portfolio tile scale-anm flyers video design">
-                                    <img src="{{asset('site/portfolio/images/pf6.jpg ')}}" alt="" />
-                                    <a href="{{asset('site/portfolio/images/pf6.jpg ')}}" class="portfolio-img">
+                               
+                                <div class="single_portfolio tile scale-anm blog">
+                                    <img class="p_img_positon" src="{{asset('site/portfolio/images/blog2.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/blog2.png')}} " class="portfolio-img">
                                         <div class="grid_item_overlay">
                                             <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
+                                            <h3>Blog Site</h3>
+                                            <p>Backedend Developoed by Laravel Application </p>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="single_portfolio tile scale-anm photo flyers">
-                                    <img src="{{asset('site/portfolio/images/pf7.jpg ')}}" alt="" />
-                                    <a href="{{asset('site/portfolio/images/pf7.jpg ')}}" class="portfolio-img">
+                                
+                                <div class="single_portfolio tile scale-anm business">
+                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/business2.jpg')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/business2.jpg')}} " class="portfolio-img">
                                         <div class="grid_item_overlay">
                                             <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
+                                            <h3>Digital BUSINESS Application</h3>
+                                            <p>Backedend Developoed by Laravel Framework </p>
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="single_portfolio tile scale-anm bcards video" >
-                                    <img src="{{asset('site/portfolio/images/pf8.jpg ')}} " alt="" />
-                                    <a href="{{asset('site/portfolio/images/pf8.jpg ')}} " class="portfolio-img">
+                                <div class="single_portfolio tile scale-anm portfolio" >
+                                     <img class="p_img_positon" src="{{asset('site/portfolio/images/portfolio1.jpg')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/portfolio1.jpg')}} " class="portfolio-img">
                                         <div class="grid_item_overlay">
                                             <div class="separator4"></div>
-                                            <h3>T-SHIRT DESIGN</h3>
-                                            <p>art / t-shirt</p>
+                                            <h3>Portfolio Site</h3>
+                                            <p>Backedend Developoed by Laravel Application </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="single_portfolio tile scale-anm  e-commerce">
+                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/ecommerce1.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/ecommerce1.png')}} " class="portfolio-img">
+                                        <div class="grid_item_overlay">
+                                            <div class="separator4"></div>
+                                            <h3>E-Commerce Application</h3>
+                                            <p>Backedend Developoed by Laravel Framework </p>
+                                        </div>
+                                    </a>
+                                </div>
+                               
+                                <div class="single_portfolio tile scale-anm business">
+                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/business.jpg')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/business.jpg')}} " class="portfolio-img">
+                                        <div class="grid_item_overlay">
+                                            <div class="separator4"></div>
+                                            <h3>Digital BUSINESS Application</h3>
+                                            <p>Backedend Developoed by Laravel Framework </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="single_portfolio tile scale-anm e-commerce" >
+                                    <img class="p_img_positon" src="{{asset('site/portfolio/images/ecommerce2.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/ecommerce2.png')}} " class="portfolio-img">
+                                        <div class="grid_item_overlay">
+                                            <div class="separator4"></div>
+                                            <h3>E-Commerce Application</h3>
+                                            <p>Backedend Developoed by row/core php </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="single_portfolio tile scale-anm travel" >
+                                    <img  src="{{asset('site/portfolio/images/travel.jpg')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/travel.jpg')}} " class="portfolio-img">
+                                        <div class="grid_item_overlay">
+                                            <div class="separator4"></div>
+                                            <h3>Travel Site</h3>
+                                            <p>Backedend Developoed by Laravel </p>
+                                        </div>
+                                    </a>
+                                </div>
+
+                                
+                                <div class="single_portfolio tile scale-anm business">
+                                    <img style="margin-top:100px;" src="{{asset('site/portfolio/images/business1.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/business1.png')}} " class="portfolio-img">
+                                        <div class="grid_item_overlay">
+                                            <div class="separator4"></div>
+                                            <h3>Digital BUSINESS Application</h3>
+                                            <p>Backedend Developoed by Laravel Framework </p>
                                         </div>
                                     </a>
                                 </div>
@@ -417,6 +462,7 @@
                     </div>
                 </div><!-- End off container --> 
             </section> <!-- End off Work Section -->            
+
 
 
 
@@ -486,8 +532,8 @@
                                             <div class="col-sm-3 col-xs-12">
                                                 <div class="single_counter_item">
                                                     <i class="icon icon-thumbs-up"></i>
-                                                    <h2 class="statistic-counter">3891</h2>
-                                                    <h4 class="">MEer FavMyites</h4>
+                                                    <h2 class="statistic-counter">3</h2>
+                                                    <h4 class="">Year of Experince</h4>
                                                 </div>
                                             </div>
                                         </div>
@@ -495,9 +541,9 @@
                                         <div class="single_counter">
                                             <div class="col-sm-3 col-xs-12">
                                                 <div class="single_counter_item">
-                                                    <i class="icon icon-thumbs-up"></i>
+                                                    <i class="icon icon-people-32"></i>
                                                     <h2 class="statistic-counter">281</h2>
-                                                    <h4 class="">Posts Last 24 HMys</h4>  
+                                                    <h4 class="">Total subscriber</h4>  
                                                 </div>
                                             </div>
                                         </div> 
@@ -505,9 +551,9 @@
                                         <div class="single_counter">
                                             <div class="col-sm-3 col-xs-12">
                                                 <div class="single_counter_item">
-                                                    <i class="icon icon-people-32"></i>
-                                                    <h2 class="statistic-counter">618</h2>
-                                                    <h4 class="">Total Posts</h4>  
+                                                    <i class="icon icon-thumbs-up"></i>
+                                                    <h2 class="statistic-counter">18</h2>
+                                                    <h4 class="">Total Developed Project</h4>  
                                                 </div>
 
                                             </div>
@@ -516,9 +562,9 @@
                                         <div class="single_counter">
                                             <div class="col-sm-3 col-xs-12">
                                                 <div class="single_counter_item">
-                                                    <i class="icon icon-cup"></i>
-                                                    <h2 class="statistic-counter">178</h2>
-                                                    <h4 class="">Amazing Features</h4>
+                                                    <i class="icon icon-gift"></i>
+                                                    <h2 class="statistic-counter">5</h2>
+                                                    <h4 class="">My Honor & Awards</h4>
 
                                                 </div>
                                             </div> 
