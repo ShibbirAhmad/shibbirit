@@ -123,7 +123,7 @@
                             <div class="card-header">
                            <div style="margin-top:35px;" class="left-area">
                                 <a class="avatar" href="{{route('author.profile',$post->user->username)}}"><img src="{{ asset('backend/images/profile/'.$post->user->image)}}" alt="Profile Image"></a>
-                            <h4 style="margin-top:-60px;margin-left:85px;"><b> About Author</b></h4>
+                            <h4 style="margin-top:-60px;margin-left:85px;"><b> About Author</b><br><i class="fa fa-briefcase"></i>  <p style="display: inline">{{$post->user->profession}}</p></h4>
                             </div>
                           </div>
                         </div>

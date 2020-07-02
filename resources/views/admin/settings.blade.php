@@ -54,7 +54,15 @@
                                                 <input type="text" name="name" id="email_address" value="{{Auth::user()->name}}" class="form-control" placeholder="Enter your email address">
                                             </div>
                                         </div>
-                                           
+                                         
+                                        
+                                        <label for="prfession">Profession</label>
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" name="profession" id="email_address" value="{{Auth::user()->profession}}" class="form-control" placeholder="Enter your profession ">
+                                            </div>
+                                        </div>
+
                                         <label for="email_address">Email Address</label>
                                             <div class="form-group">
                                                 <div class="form-line">

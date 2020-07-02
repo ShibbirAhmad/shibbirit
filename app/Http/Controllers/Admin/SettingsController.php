@@ -39,6 +39,7 @@ class SettingsController extends Controller
 
 
         $user->name=$request->name;
+        $user->profession=$request->profession;
         $user->about=$request->about;
         if ($user->save()) {
            

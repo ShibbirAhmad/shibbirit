@@ -303,14 +303,14 @@
 
           
             <section id="portfolio" class="portfolio sections">
-                <div class="container-fluid bg-info ">
+                <div class="container-fluid  ">
                     <div class="row">
                         <div class="main_portfolio">
                             <div class="col-sm-12">
                                 <div class="head_title text-center">
                                     <h2>Implemented Project By Myself</h2>
                                     <div class="subtitle">
-                                        It has survived not only five centuries, but also the leap scrambled it to make a type.
+                                       <p>Here is the application those i have customized design and Backend Developed by PHP, Laravel & Ajax </p>
                                     </div>
                                     <div class="separator"></div>
                                 </div>
@@ -329,7 +329,7 @@
                             </div>
 
                             <div style="clear:both;"></div>     
-                            <div id="portfoliowork"> 
+                            <div class="bg-info" id="portfoliowork"> 
                                 
                                 <div class="single_portfolio tile scale-anm blog grid-item-width2 " >
                                     <img class="p_img_positon" src="{{asset('site/portfolio/images/blog1.png')}} " alt="project demo" />  
