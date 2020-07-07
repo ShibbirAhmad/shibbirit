@@ -25,9 +25,17 @@
         <link rel="stylesheet" href="{{asset('site/portfolio/css/bootstrap.css ')}} ">
         <link rel="stylesheet" href="{{asset('site/portfolio/css/bootstrap.min.css ')}}  ">
         <link rel="stylesheet" href="{{asset('site/portfolio/css/magnific-popup.css ')}} ">
-       
+ 
         <!--        <link rel="stylesheet" href="assets/css/bootstrap-theme.min.css">-->
 
+        
+     <!--cdn of sweet_alert-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.css">
+    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.js"></script>
+ 
+      <!--cdn of sweet_alert-->
+      
 
         <!--For Plugins external css-->
         <link rel="stylesheet" href="{{asset('site/portfolio/css/plugins.css ')}} " />
@@ -738,7 +746,7 @@
 
                                     <div  class="col-sm-6 col-md-6">
                                         <div class="single_contant_left padding-top-90 padding-bottom-90">
-                                            <form action="#" id="formid">
+                                            <form class="form" action="" id="clientMessageForm">
                                                 <div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
 
                                                     <div class="row">
@@ -771,6 +779,7 @@
                                                     <div class="">
                                                         <input type="submit" value="SEND MESSAGE" class="btn btn-lg">
                                                     </div>
+                                                
                                                 </div> 
                                             </form>
                                         </div>
@@ -867,6 +876,80 @@
 
         <script src="{{asset('site/portfolio/js/plugins.js ')}}  "></script>
         <script src="{{asset('site/portfolio/js/main.js ')}} "></script>
+
+        
+        <script>
+
+               $(function(){
+
+               $('#clientMessageForm').on('submit',function(event){
+                     
+                event.preventDefault()
+
+                let form_data=$(this).serialize() ;
+                let routeUrl = '{{url('client/message')}}' ;
+
+                $.ajaxSetup({
+                headers : {  'X-CSRF-TOKEN' : '{{ csrf_token() }}' }
+                 });      
+
+               $.ajax({
+                  
+                  url      : routeUrl ,
+                  method   : 'POST',
+                  data     :  form_data,
+                  dataType : 'JSON',
+                  cache    : false ,
+                  success  : function(response){
+                   
+                     console.log(response)
+                     if (response.success == "OK") {
+                         
+                         Swal.fire({
+
+                             type : 'success' ,
+                             text : "message" + response.status + "successfully! kindly, wait for my sweet Reply",
+                         });
+
+                         // to reset input field
+                         $('input').each(function(){
+                             $(this).val(null)
+                         })
+                         
+                         $('textarea').val(null)
+
+
+                     }else{
+
+                         Swal.fire({
+                            type   : 'error',
+                            title  : '<P style="color: red;">Oops...<p>',
+                            text   : response.errors,
+                            footer : '<b> Something Wrong</b>'
+                         });
+                     }
+                  },
+
+                  error    : function(error){
+
+                       console.log(error)
+                  }
+
+
+
+               })
+
+
+
+
+               })
+
+
+               })
+                 
+
+
+        </script>
 
     </body>
 </html>

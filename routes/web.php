@@ -123,6 +123,9 @@ Route::group(['as' => 'author.','prefix' => 'author' , 'namespace' => 'Author', 
      //Route for my portfolio
      Route::get('portfolio','PortfolioController@index')->name('portfolio.shibbir');
 
+     //Route for receving client message
+     Route::post('client/message','ClientMessageController@clientMessage')->name('client.message');
+
 
 
      
