@@ -66,6 +66,10 @@ Route::group(['as' => 'admin.','prefix' => 'admin' , 'namespace' => 'Admin', 'mi
      Route::get('author','AuthorsController@index')->name('author');
      Route::delete('author/{id}','AuthorsController@destroy')->name('author.destroy');
 
+     //route for client message 
+     Route::get('client/message/data','ClientMessageController@getNotification')->name('client.message.notify');
+     //Route::get('single/client/message/{id}','ClientMessageController@getSingleUser')->name('single.client.message');
+     
 
 });
 

@@ -117,8 +117,8 @@
     <script src="{{asset('js/jquery.min.js ')}}"></script>
     <script src="{{asset('js/myScript.js ')}}"></script>
     <!-- Bootstrap Core Js -->
-    <script src="{{asset('js/app.js ')}}"></script>
-
+    <script src="{{asset('js/app.js ')}}"></script> 
+   
     
     <!-- Slimscroll Plugin Js --> 
     <script src="{{asset('backend/plugins/jquery-slimscroll/jquery.slimscroll.js ')}}"></script>

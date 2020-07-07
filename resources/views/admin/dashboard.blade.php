@@ -9,7 +9,49 @@
 
 @section('content')
 
+
  
+<div id="message_container" style="display:none" class="row bg-info">
+    <div class="col-md-12  col-sm-12">
+        <div class="card text-white bg-dark ">
+            <div class="card-header text-center"><h5 class="card-title">New message</h5></div>
+            <div class="card-body ">
+                <ul id="message_displayer" class="list-group">
+                    
+                </ul>
+            
+            </div>
+            <div class="card-footer"></div>
+        </div>
+    </div>
+</div>
+
+
+{{-- email reply modal --}}
+
+
+<div class="modal fade" id="reply_modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form action=""></form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {{-- modal end   --}}
+
 <div class="block-header">
     <h2>WELCOME TO ADMIN DASHBOARD</h2>
 </div>
@@ -230,6 +272,64 @@
 
 
 
-@push('js')
+@section('script')
+
+      
+<script>
+
+    $(function(){
+       
+     
+    //this is load more function 
+      $('#MessageNotification').on('click',function messageLoader() {
+      
+         $('#message_container').show()
+        var dataUrl = '{{url('admin/client/message/data')}}' ;
+       
+        var clientUrl= '{{ route('admin.single.client.message',":id")}}'
+       
+         
+           $.ajax({
+
+               url      : dataUrl,
+               method   : 'GET' ,
+               dataType : 'JSON',
+               cache    : false ,
+
+               success : function(response){
+
+                       console.log(response)
+                  if(response){ 
+                   var html ='';
+                  response.forEach(function(client_data){
+
+                   
+                     html += '<li class="list-group-item"><a data-toggle="modal" href="#reply_modal" id="message_row" style="text-decoration:none;font-size:14px;" > <i class=" fa fa-lg fa-user-circle "></i> ' + client_data.name +' has sent a message to you '+ client_data.created_at  +' reply quickly. your client is waiting for your instance reply </a> </li>'     
+               
+                 
+                    })
+                
+                 $('#message_displayer').html(html)
+                  }
+                   
+               },
+
+               error : function(error){
+                  
+                     console.log(error)
+               }
+
+
+           })
     
-@endpush
+              })
+
+
+
+
+           });
+    
+    
+     </script>
+    
+@endsection

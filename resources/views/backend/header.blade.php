@@ -36,7 +36,20 @@
             <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
             <a href="javascript:void(0);" class="bars"></a>
             <a class="navbar-brand" href="index.html">Advance Bloging Site developed by Laravel</a>
+           
         </div>
+       
+  
+@if (Auth::user()->role_id == '1' )
+<div class="float-right pr-2"> 
+    <button class="btn btn-light" style="color:red;font-size:18px;" id="MessageNotification">
+        <i class="fa fa-lg fa-bell "></i> <sup> <b> {{ App\ClientMessage::where('status',0)->count() }} </b></sup> New Message</button>
+  
+ </div>
+
+
+@endif
+ 
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right">
                 <!-- Call Search -->
@@ -45,6 +58,11 @@
         
             </ul>
         </div>
+
+        
     </div>
+
 </nav>
+
 <!-- #Top Bar --> 
+

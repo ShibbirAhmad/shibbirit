@@ -20,6 +20,7 @@ class CreateClientMessagesTable extends Migration
             $table->string('email');
             $table->string('subject')->nullable();
             $table->string('message');
+            $table->integer('status')->default(0);
 
             $table->timestamps();
         });
