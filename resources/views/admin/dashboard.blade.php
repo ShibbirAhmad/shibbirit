@@ -34,17 +34,36 @@
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">message Details</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          <form action=""></form>
+          <form class="form" action="" id="message_reply_form">
+              
+            <div class="col-md-12">
+               
+                    <label for="to"> To : </label> <input name="email" class="form-control"  type="email" value="" >
+             
+  
+                    <label for="from">From : </label> <input name="admin_email" class="form-control" type="email" value="" >
+          
+
+                    <label for="from">Subject : </label> <input name="subject" class="form-control" type="text" value="" >
+          
+                    <label for="from">Message : </label>  <textarea name="message_body"  class="form-control" rows="10"></textarea>
+
+
+              </div>
+
+
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="submit" class="btn btn-info ">Push Reply </button>
           
+        </form>
         </div>
       </div>
     </div>
@@ -285,9 +304,7 @@
       
          $('#message_container').show()
         var dataUrl = '{{url('admin/client/message/data')}}' ;
-       
-        var clientUrl= '{{ route('admin.single.client.message',":id")}}'
-       
+        var clientUrl = '{{ route('admin.single.client.message',":id") }}'
          
            $.ajax({
 
@@ -298,19 +315,21 @@
 
                success : function(response){
 
-                       console.log(response)
+            
                   if(response){ 
                    var html ='';
                   response.forEach(function(client_data){
 
                    
-                     html += '<li class="list-group-item"><a data-toggle="modal" href="#reply_modal" id="message_row" style="text-decoration:none;font-size:14px;" > <i class=" fa fa-lg fa-user-circle "></i> ' + client_data.name +' has sent a message to you '+ client_data.created_at  +' reply quickly. your client is waiting for your instance reply </a> </li>'     
-               
+                     html += '<li  class="list-group-item"><a  href="'+ clientUrl.replace(':id', client_data.id )+'" id="message_row"  style="text-decoration:none;font-size:14px;" > <i class=" fa fa-lg fa-user-circle "></i> ' + client_data.name +' has sent a message to you '+ client_data.created_at  +' reply quickly. your client is waiting for your instance reply </a> </li>'     
                  
                     })
                 
                  $('#message_displayer').html(html)
+
+
                   }
+
                    
                },
 
@@ -324,9 +343,7 @@
     
               })
 
-
-
-
+    
            });
     
     

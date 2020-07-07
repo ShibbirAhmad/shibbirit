@@ -45,7 +45,12 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="{{asset('backend/css/themes/all-themes.css ')}}" rel="stylesheet" />
 
+     <!--cdn of sweet_alert-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.css">
     
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/8.11.8/sweetalert2.all.js"></script>
+
+     <!--cdn of sweet_alert-->
 	
      @stack('css')
    
