@@ -93,7 +93,7 @@
                             @endguest
 
                         </li>
-                        <li><a href="{{route('post.details',$post->slug)}}"><i class="fa fa-comment"></i>{{$post->comments()->count() }}</a></li>
+                        <li><a href="{{route('post.details',$post->slug)}}"><i class="fa fa-comments"></i>{{$post->comments()->count() }}</a></li>
                         <li><a href="{{route('post.details',$post->slug)}}"><i class="fa fa-eye"></i>{{ $post->view_count }}</a></li>
                     </ul>
 
@@ -129,6 +129,88 @@
 
 @push('js')
     
+
+
+<script>
+
+    $(function(){
+       
+       
+    //this is load more function 
+      $('#load_more').on('click',function postLoader() {
+      
+        var dataUrl = '{{url('load-more/data')}}' ;
+
+        var post_file_path= '{{asset('backend/images/posts') }}/' ;
+        var avator_file_path= '{{asset('backend/images/profile') }}/' ;
+        var detailsUrl= '{{route('post.details',":slug")}}' ;
+        var authorUrl='{{ route('author.profile',":username") }}' ;
+
+           $.ajax({
+
+               url      : dataUrl,
+               method   : 'GET' ,
+               dataType : 'JSON',
+               cache    : false ,
+            contentType : 'application/json',
+               success  : function(response){
+                 
+                 
+                     
+                 if(response.success=="OK"){
+                    console.log(response.data)
+                  var html = '';
+                  response.data.forEach(function(post){
+                   html += ' <div class="col-lg-4 col-md-6"> '  
+                   html += ' <div class="card h-100"> '  
+                   html += ' <div  class="single-post post-style-1"> ' 
+
+                   html += '<div class="blog-image"> <img src= "' + post_file_path+post.image + '" >' 
+
+                        html += '<a class="avatar" href="'+ authorUrl.replace(':username',post.user.username) +'" ><img src="' + avator_file_path+post.user.image + '"></a>'
+
+                   html +=  '</div>'
+
+                   html += '<h4 class="title " ><a href="'+ detailsUrl.replace(':slug',post.slug) +'" ><b>' + post.title + '</b></a></h4>'
+                   
+                   
+                   html += '<ul class="post-footer">'
+
+                       html += '<li> <a href="'+ detailsUrl.replace(':slug',post.slug) +'" > <i class=" fa fa-heart"></i> </a> </li>'     
+                       html += '<li> <a href="'+ detailsUrl.replace(':slug',post.slug) +'" > <i class=" fa fa-comments"></i> </a></li>'     
+                       html += '<li> <a href="'+ detailsUrl.replace(':slug',post.slug) +'" > <i class=" fa fa-eye"></i>' + post.view_count + '</a> </li>'     
+                
+                 html += '</ul>'
+    
+                 html += '</div>' 
+                 html += '</div>' 
+                 html += '</div>' 
+
+                 
+                   })
+                
+               
+                    $('#post_displayer').html(html)
+
+                    $('#hide_loader').hide()
+
+                 }
+                   
+               },
+
+               error : function(error){
+                  
+                     console.log(error)
+               }
+
+
+           })
+    
+                })
+                 
+            });
+    
+    </script>
 
 
 @endpush

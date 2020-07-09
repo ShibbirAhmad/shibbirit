@@ -134,8 +134,37 @@ Route::group(['as' => 'author.','prefix' => 'author' , 'namespace' => 'Author', 
 
 
      
+          
+     //those route are for user external link
+     Route::get('/facebook','SocialController@facebook')->name('facebook');
+     Route::get('/twitter','SocialController@twitter')->name('twitter');
+     Route::get('/linkedin','SocialController@linkedin')->name('linkedin');
+     Route::get('/pinterest','SocialController@pinterest')->name('pinterest');
+     Route::get('/github','SocialController@github')->name('github');
+     Route::get('/vimeo','SocialController@vimeo')->name('vimeo');
+     Route::get('/colorlib','SocialController@colorlib')->name('colorlib');
+     Route::get('/shibbirit','SocialController@shibbirit')->name('shibbirit');
+
+     
+
+     //route for admin social external link 
+     Route::get('/facebook-admin','AdminSocialController@facebook')->name('facebook.admin');
+     Route::get('/upwork-admin','AdminSocialController@upwork')->name('upwork.admin');
+     Route::get('/fiver-admin','AdminSocialController@fiver')->name('fiver.admin');
+     Route::get('/youtube-admin','AdminSocialController@youtube')->name('youtube.admin');
+     Route::get('/instragram-admin','AdminSocialController@instragram')->name('instragram.admin');
+     Route::get('/google-plus-admin','AdminSocialController@google_plus')->name('google-plus.admin');
+     Route::get('/twitter-admin','AdminSocialController@twitter')->name('twitter.admin');
+     Route::get('/linkedin-admin','AdminSocialController@linkedin')->name('linkedin.admin');
+     Route::get('/pinterest-admin','AdminSocialController@pinterest')->name('pinterest.admin');
+     Route::get('/github-admin','AdminSocialController@github')->name('github.admin');
+     Route::get('/skype-admin','AdminSocialController@skype')->name('skype.admin');
+   
+  
 
 
+
+// view composer for categories and tag
 view()->composer('site.layout.footer', function ($view) {
 
      $categories= App\Category::all();

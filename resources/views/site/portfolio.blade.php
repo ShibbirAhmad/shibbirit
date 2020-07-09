@@ -52,6 +52,7 @@
         
         p{font-size:16px; }
         .p_img_positon {margin-bottom:100px;padding-right:20px;}
+        .flowME a { margin-right:10px;overflow: hidden;}
 
 
     </style>
@@ -77,10 +78,10 @@
                                                 <h1>WELCOME TO SHIBBIR-IT</h1>
                                                 <div class="separator"></div>
                                                 <p>Hi! i am Shibbir Ahmad.I am serviceing as programmer of Web Developing technology base in PHP,Laravel & Ajax(javaScript).
-                                                    I will develop your application with emphasis security vulnarabilities AND design customize by bootstrap framework as you want.
+                                                    I will develop your application with emphasis security vulnarabilities AND design psd to html or  customize by bootstrap framework as you want.
                                                     Further-more, i will still support you if you make once work relation with me.  </p>
                                                 <div class="home_btn">
-                                                    <a href="#" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
+                                                    <a href="{{route('upwork.admin')}}" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
                                                     <a href="#service" class="btn btn-default">CLICK TO KNOW MORE </a>
                                                 </div>
 
@@ -95,7 +96,7 @@
                                                     I will develop your application with emphasis security vulnarabilities AND design customize as you want.
                                                     Further-more, i will still support you if you make once work relation with me. </p>
                                                 <div class="home_btn">
-                                                    <a href="#" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
+                                                    <a href="{{route('upwork.admin')}}" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
                                                     <a href="#feature" class="btn btn-default">CLICK TO KNOW MORE</a>
                                                 </div>
 
@@ -109,7 +110,7 @@
                                                 I will develop your application with emphasis security vulnarabilities AND design customize by bootstrap framework as you want.
                                                 Further-more, i will still support you if you make once work relation with me.  </p>
                                             <div class="home_btn">
-                                                <a href="#" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
+                                                <a href="{{route('upwork.admin')}}" class="btn btn-lg m_t_10">LET'S HIRE ME NOW IN UPWORK </a>
                                                 <a href="#portfolio" class="btn btn-default">CLICK TO SEE PORTFOLIO PROJECT</a>
                                             </div>
 
@@ -138,11 +139,11 @@
                                         <i class="fa fa-clone"></i>
                                     </div>
 
-                                    <h4> DESIGN CUSTOMIZE</h4>
+                                    <h4> DESIGN & CUSTOMIZE</h4>
                                     <div class="separator3"></div>
                                     <p> I have skill in structure language of web application(HTML) AND it's design technology css.
                                         Also,  I have good experience of using popular design framework bootstrap. 
-                                        i customize design by bootstrap & CSS.</p>
+                                        i will convert your template psd to html or customize design by bootstrap & CSS.</p>
                                 </div>
                             </div>
 
@@ -155,7 +156,7 @@
                                     <h4>CLEAN CODE</h4>
                                     <div class="separator3"></div>
                                     <p>Clean code is an important issue of any application.Because, 
-                                     in futute necessity,  base application will be editing or updating . attaching code comment  are my regular habits.
+                                     in future necessity,  base application will be needed for editing or updating . attaching code comment  are my regular habits.
                                       code comment is needed so that other programmer can understand what i have done  </p>
                                 </div>
                             </div>
@@ -215,7 +216,7 @@
                                         At present, i have basic skill in javaScript & Ajax and in future, goal is to gain deep skill in javaScript and it's all frameworks.
                                        point to be noted i am not professional designer but, i have an experience in all design technology(HTML,CSS & BOOTSTARP)  </p>
 
-                                    <a href="https://github.com/ShibbirAhmad" class="btn btn-lg">BROWSE My WORK IN GITHUB </a>
+                                    <a href="{{route('github.admin')}}" class="btn btn-lg">BROWSE My WORK IN GITHUB </a>
                                 </div>
                             </div>
                         </div>
@@ -350,6 +351,17 @@
                                     </a>
                                 </div>
                                 
+                                <div class="single_portfolio tile scale-anm blog" >
+                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/blog44.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/blog44.png')}} " class="portfolio-img">
+                                        <div class="grid_item_overlay">
+                                            <div class="separator4"></div>
+                                            <h3>Simple Blog Site</h3>
+                                            <p>Backedend Developoed by Laravel Application </p>
+                                        </div>
+                                    </a>
+                                </div>
+                                
                                 <div class="single_portfolio tile scale-anm portfolio " >
                                     <img  class="p_img_positon" src="{{asset('site/portfolio/images/portfolio.png')}} " alt="project demo" />  
                                     <a href="{{asset('site/portfolio/images/porfolio.png')}} " class="portfolio-img">
@@ -360,11 +372,11 @@
                                         </div>
                                     </a>
                                 </div>
-                                
+    
                                 
                                 <div class="single_portfolio tile scale-anm blog" >
-                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/blog3.png')}} " alt="project demo" />  
-                                    <a href="{{asset('site/portfolio/images/blog3.png')}} " class="portfolio-img">
+                                    <img  class="p_img_positon" src="{{asset('site/portfolio/images/blog33.png')}} " alt="project demo" />  
+                                    <a href="{{asset('site/portfolio/images/blog33.png')}} " class="portfolio-img">
                                         <div class="grid_item_overlay">
                                             <div class="separator4"></div>
                                             <h3>Simple Blog Site</h3>
@@ -385,6 +397,8 @@
                                     </a>
                                 </div>
                                 
+                                 
+
                                 <div class="single_portfolio tile scale-anm business">
                                     <img  class="p_img_positon" src="{{asset('site/portfolio/images/business2.jpg')}} " alt="project demo" />  
                                     <a href="{{asset('site/portfolio/images/business2.jpg')}} " class="portfolio-img">
@@ -396,6 +410,8 @@
                                     </a>
                                 </div>
 
+                               
+
                                 <div class="single_portfolio tile scale-anm portfolio" >
                                      <img class="p_img_positon" src="{{asset('site/portfolio/images/portfolio1.jpg')}} " alt="project demo" />  
                                     <a href="{{asset('site/portfolio/images/portfolio1.jpg')}} " class="portfolio-img">
@@ -406,7 +422,8 @@
                                         </div>
                                     </a>
                                 </div>
-
+     
+                           
                                 <div class="single_portfolio tile scale-anm  e-commerce">
                                     <img  class="p_img_positon" src="{{asset('site/portfolio/images/ecommerce1.png')}} " alt="project demo" />  
                                     <a href="{{asset('site/portfolio/images/ecommerce1.png')}} " class="portfolio-img">
@@ -417,6 +434,7 @@
                                         </div>
                                     </a>
                                 </div>
+                              
                                
                                 <div class="single_portfolio tile scale-anm business">
                                     <img  class="p_img_positon" src="{{asset('site/portfolio/images/business.jpg')}} " alt="project demo" />  
@@ -428,6 +446,7 @@
                                         </div>
                                     </a>
                                 </div>
+
 
                                 <div class="single_portfolio tile scale-anm e-commerce" >
                                     <img class="p_img_positon" src="{{asset('site/portfolio/images/ecommerce2.png')}} " alt="project demo" />  
@@ -451,7 +470,7 @@
                                     </a>
                                 </div>
 
-                                
+                  
                                 <div class="single_portfolio tile scale-anm business">
                                     <img style="margin-top:100px;" src="{{asset('site/portfolio/images/business1.png')}} " alt="project demo" />  
                                     <a href="{{asset('site/portfolio/images/business1.png')}} " class="portfolio-img">
@@ -462,7 +481,8 @@
                                         </div>
                                     </a>
                                 </div>
-
+                            
+                                
                             </div>
 
                             <div style="clear:both;"></div>  
@@ -604,10 +624,10 @@
                                     <ul>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team1.png ')}} " alt="" />
+                                              <a href="{{route('facebook.admin')}}"> <img src="{{asset('site/portfolio/images/team1.png ')}} " alt="" /></a>  
                                             </div>
                                             <div class="single_team_text">
-                                                <h4>  <a href="">Facebook</a> <i class="fa fa-facebook"></i></h4>
+                                                <h4>  <a href="{{route('facebook.admin')}}">Facebook</a> <i class="fa fa-facebook"></i></h4>
                                                
                                                  <p>Follow</p>
                                                  <p>Friend</p>
@@ -616,10 +636,10 @@
                                         </li>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team2.png ')}}" alt="" />
+                                                <a href="{{route('linkedin.admin')}}"><img src="{{asset('site/portfolio/images/team2.png ')}}" alt="" /></a>
                                             </div>
                                             <div class="single_team_text">
-                                                <h4><a href="">Linkedin <i class="fa fa-linkedin"></i></a></h4>
+                                                <h4><a href="{{route('linkedin.admin')}}">Linkedin <i class="fa fa-linkedin"></i></a></h4>
                                             
                                              <p>Connect</p>  
                                              <p>Comment</p>  
@@ -629,10 +649,10 @@
                                         </li>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team3.png ')}}" alt="" />
+                                             <a href="{{route('github.admin')}}">  <img src="{{asset('site/portfolio/images/team3.png ')}}" alt="" /></a>  
                                             </div>
                                             <div class="single_team_text">
-                                                <h4> <a href="">Git Hub <i class="fa fa-git"></i></a></h4>
+                                                <h4> <a href="{{route('github.admin')}}">Git Hub <i class="fa fa-git"></i></a></h4>
                                                      
                                                 <p>Follow</p> 
                                                 <p>Star</p> 
@@ -642,20 +662,20 @@
                                         </li>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team5.png ')}}" alt="" />
+                                              <a href="{{route('skype.admin')}}"><img src="{{asset('site/portfolio/images/team5.png ')}}" alt="" /> </a>  
                                             </div>
                                             <div class="single_team_text">
-                                                <h4> <a href="">Skype <i class="fa fa-skype"></i></a></h4>
+                                                <h4> <a href="{{route('skype.admin')}}">Skype <i class="fa fa-skype"></i></a></h4>
                                                 <p>chat</p>   
                                                 <p>Follow</p>
                                             </div>
                                         </li>
                                         <li>
                                             <div class="single_team_img">
-                                                <img src="{{asset('site/portfolio/images/team4.png ')}}" alt="" />
+                                              <a href="{{route('youtube.admin')}}"> <img src="{{asset('site/portfolio/images/team4.png ')}}" alt="" /></a>   
                                             </div>
                                             <div class="single_team_text">
-                                                <h4>  <a href="">youtube <i class="fa fa-youtube"></i></a> </h4>
+                                                <h4>  <a href="{{route('youtube.admin')}}">youtube <i class="fa fa-youtube"></i></a> </h4>
                                                
                                                 <p>Subscribe</p>
                                                 <p>Share</p>
@@ -693,29 +713,39 @@
                                                 <div class="contact_info_content padding-top-90 padding-bottom-60 p_l_r">
                                                     <div class="col-sm-12">
                                                         <div class="single_contact_info">
-                                                            <div class="single_info_text text-center">
+                                                            <div class="single_info_text text-center ">
+
+                                                                <div style="border-radius:5px;background:#E74C3C" class="card  ">
+                                                                    <div class="card-header"> <h4 style="color:#fff">My Address</h4> </div>
+                                                                </div>
+                                                                <div style="border: 2px solid rgb(214, 79, 64);border-radius:5px;background:#E74C3C" class="card-body  ">
                                                                 
-                                                                <h3>My ADDRESS</h3>
-                                                                <h4>Dhaka,Bangladesh</h4>
+                                                                <h5 style="color:#fff">Dhaka-->Bangladesh</h5>
+                                                                                   
+                                                            
+                                                               </div>
+                                                             
+                                                                <div style="height:13px;border-radius:5px;background:#E74C3C" class="card-footer"></div> 
+
                                                             </div>
                                                         </div>
                                                     </div>
                                                     <div class="col-sm-12">
                                                         <div class="single_contact_info">
-                                                            <div class="single_info_text text-center">
+                                                            <div class="single_info_text text-center ">
 
-                                                                <div style="border-radius:5px" class="card bg-info ">
-                                                                    <div class="card-header"> <h3>CALL ME</h3> </div>
+                                                                <div style="border-radius:5px;background:#E74C3C" class="card  ">
+                                                                    <div class="card-header"> <h4 style="color:#fff">CALL ME</h4> </div>
                                                                 </div>
-                                                                <div style="border: 1px solid  rgb(45, 168, 230);border-radius:5px;" class="card-body ">
+                                                                <div style="border: 2px solid rgb(214, 79, 64);border-radius:5px;background:#E74C3C" class="card-body  ">
                                                                 
-                                                                <h4>+ 88 01737 481778</h4>
-                                                                <h4>+ 88 01856 920229</h4>
-                                                                <h4>+ 88 01759 416979</h4>                        
+                                                                <h5 style="color:#fff">+ 88 01737 481778</h5>
+                                                                <h5 style="color:#fff">+ 88 01856 920229</h5>
+                                                                <h5 style="color:#fff">+ 88 01759 416979</h5>                        
                                                             
                                                                </div>
                                                              
-                                                                <div style="height:13px;border-radius:5px;" class="card-footer bg-info"></div> 
+                                                                <div style="height:13px;border-radius:5px;background:#E74C3C" class="card-footer"></div> 
 
                                                             </div>
                                                         </div>
@@ -724,18 +754,19 @@
                                                         <div class="single_contact_info">
                                                             <div class="single_info_text text-center">
                                                                 
-                                                                <div style="border-radius:5px" class="card bg-info ">
-                                                                    <div class="card-header"><h3>EMAIL ME</h3> </div>
+                                                                <div style="border-radius:5px;background:#E74C3C" class="card  ">
+                                                                    <div class="card-header"> <h4 style="color:#fff">EMAIL ME</h4> </div>
                                                                 </div>
-                                                                <div style="border: 1px solid  rgb(49, 178, 243);border-radius:5px;" class="card-body ">
-                                                                    <h5  style="font-size: 16px">shibbirahmad920229@gmail.com</h5>
+                                                                <div style="border: 2px solid rgb(214, 79, 64);border-radius:5px;background:#E74C3C" class="card-body  ">
+                                                                
+                                                                    <h5  style="color:#fff ; font-size: 16px">shibbirahmad920229@gmail.com</h5>
 
-                                                                    <h5  style="font-size: 16px;margin-top:5px;">shibbirahmedcomputer@gmail.com</h5>
+                                                                    <h5  style="color:#fff ; font-size: 16px;margin-top:5px;">shibbirahmedcomputer@gmail.com</h5>
     
-                                                                    <h5  style="font-size: 16px;margin-top:5px;">shibbirahmad416979@gmail.com</h5>
+                                                                    <h5  style="color:#fff ; font-size: 16px;margin-top:5px;">shibbirahmad416979@gmail.com</h5>
                                                                 </div>
-                                                             
-                                                                <div style="height:13px;border-radius:5px" class="card-footer bg-info"></div> 
+                                                               
+                                                                <div style="height:13px;border-radius:5px;background:#E74C3C" class="card-footer"></div> 
                                                             </div>
                                                         </div>
                                                     </div>
@@ -744,7 +775,7 @@
                                         </div>
                                     </div> 
 
-                                    <div  class="col-sm-6 col-md-6">
+                                    <div  class=" col-md-6 col-sm-6">
                                         <div class="single_contant_left padding-top-90 padding-bottom-90">
                                             <form class="form" action="" id="clientMessageForm">
                                                 <div class="col-lg-8 col-md-8 col-sm-10 col-lg-offset-2 col-md-offset-2 col-sm-offset-1">
@@ -819,20 +850,22 @@
                         <div class="col-sm-12">
                             <div class="main_footer">
                                 <div class="row">
-                                    <div class="col-sm-6 col-xs-12">
+                                    <div class="col-sm-6 mt-2 col-xs-12">
                                         <div class="flowME">
-                                            <a href=""><i class="fa fa-facebook"></i></a>
-                                            <a href=""><i class="fa fa-twitter"></i></a>
-                                            <a href=""><i class="fa fa-google-plME"></i></a>
-                                            <a href=""><i class="fa fa-instagram"></i></a>
-                                            <a href=""><i class="fa fa-youtube"></i></a>
-                                            <a href=""><i class="fa fa-dribbble"></i></a>
+                                            <a href="{{route('facebook.admin')}}"><i class="fa  fa-lg  fa-facebook"></i></a>
+                                            <a href="{{route('linkedin.admin')}}"><i class="fa fa-lg  fa-linkedin"></i></a>
+                                            <a href="{{route('skype.admin')}}"><i    class="fa fa-lg  fa-skype"></i></a>
+                                            <a href="{{route('twitter.admin')}}"><i  class="fa fa-lg  fa-twitter"></i></a>
+                                            <a href="{{route('google-plus.admin')}}"><i class="fa fa-lg  fa-google-plME"></i></a>
+                                            <a href="{{route('instragram.admin')}}"><i class="fa fa-lg  fa-instagram"></i></a>
+                                            <a href="{{route('youtube.admin')}}"><i    class="fa fa-lg  fa-youtube"></i></a>
+                                            <a href="{{route('github.admin')}}"><i     class="fa fa-lg  fa-git"></i></a>
                                         </div>
                                     </div>
 
                                     <div class="col-sm-6 col-xs-12">
                                         <div class="copyright_text">
-                                            <p class=" wow fadeInRight" data-wow-duration="1s"> <i class="fa fa-heart"></i>Developoed by Shibbir Ahmad . All Rights Reserved in 2020</p>
+                                            <p class=" wow fadeInRight" data-wow-duration="1s"> <i class="fa fa-lg fa-heart"></i>Developoed by Shibbir Ahmad . All Rights Reserved in 2020</p>
                                         </div>
                                     </div>
                                 </div>

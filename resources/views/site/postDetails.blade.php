@@ -16,6 +16,8 @@
            background-image: url({{ asset('backend/images/posts/'.$post->image) }});
             
         }
+
+        .icons li {margin-right:5px;}
     </style>
 
 @endpush
@@ -102,9 +104,12 @@
 
                         <ul class="icons">
                             <li>SHARE : </li>
-                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
+                            <li><a href="{{route('facebook')}}"><i class="fab fa-lg fa-facebook-f "></i></a></li>
+                            <li><a href="{{route('linkedin')}}"><i class="fab  fa-lg fa-linkedin "></i></a></li>
+                            <li><a href="{{route('pinterest')}}"><i class="fab fa-lg fa-pinterest-p " aria-hidden="true"></i> </a></li>
+                            <li><a href="{{route('twitter')}}"><i class="fab fa-lg fa-twitter"></i></a></li>
+                            <li><a href="{{route('github')}}"><i class="fab fa-lg fa-git"></i></a></li>
+                            <li><a href="{{route('vimeo')}}"><i class="fab  fa-lg fa-vimeo-square"></i></a></li>
                         </ul>
                     </div>
 
@@ -149,7 +154,7 @@
 
                 </div><!-- info-area -->
 
-            </div><!-- col-lg-4 col-md-12 -->
+            </div><!-- col-lg-4 col-md-12 --> 
 
         </div><!-- row -->
 
@@ -263,7 +268,8 @@
                             <a class="name" href="#"><b>{{ $comment->user->name}}</b></a>
                             <h6 class="date">{{ $comment->created_at->diffForHumans() }}</h6>
                         </div>
-
+                    @if (Auth::user())
+                   
                       <div class="float-right">
                         <div class="body">
                             <!-- Nav tabs -->
@@ -276,6 +282,9 @@
                             </ul>
                         </div>
                     </div>
+
+                         
+                    @endif
 
                     </div><!-- post-info -->
 

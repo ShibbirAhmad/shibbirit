@@ -42,6 +42,13 @@
                     </a>
                 </li>
                
+                <li class="active">
+                    <a href="{{route('home')}}">
+                        <i class="material-icons">labels</i>
+                        <span>Visit Site</span>
+                    </a>
+                </li>
+
               <!--tags option start from here-->
                 <li class="{{Request::is('admin/tag*') ? 'active' : ''}}">
                     <a href="{{route('admin.tag.index')}}">

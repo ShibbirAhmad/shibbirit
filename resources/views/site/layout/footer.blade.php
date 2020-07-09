@@ -9,13 +9,14 @@
     
                       
                         <p class="copyright">{{ config('app.name') }} @ 2020. All rights reserved.</p>
-                        <p class="copyright">Designed by <a href="#" target="_blank">Colorlib</a> and Developed By <a target="_blank" href="www.shibbirit.com">shibbirit</a></p>
+                        <p class="copyright">Designed by <a href="{{route('colorlib')}}" target="_blank">Colorlib</a> and Developed By <a target="_blank" href="{{route('home')}}">shibbirit</a></p>
                         <ul class="icons">
-                            <li><a href="#"><i class="fab fa-facebook-f "></i></a></li>
-                            <li><a href="#"><i class="fab fa-pinterest-p " aria-hidden="true"></i> </a></li>
-                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#"><i class="fab fa-git"></i></a></li>
-                            <li><a href="#"><i class="fab fa-vimeo-square"></i></a></li>
+                            <li><a href="{{route('facebook')}}"><i class="fab fa-facebook-f "></i></a></li>
+                            <li><a href="{{route('linkedin')}}"><i class="fab fa-linkedin "></i></a></li>
+                            <li><a href="{{route('pinterest')}}"><i class="fab fa-pinterest-p " aria-hidden="true"></i> </a></li>
+                            <li><a href="{{route('twitter')}}"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="{{route('github')}}"><i class="fab fa-git"></i></a></li>
+                            <li><a href="{{route('vimeo')}}"><i class="fab fa-vimeo-square"></i></a></li>
                         </ul>
     
                     </div><!-- footer-section -->

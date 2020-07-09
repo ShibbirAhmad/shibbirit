@@ -33,11 +33,17 @@ class HomeController extends Controller
     // to get data by ajax 
     public function getDataByAjax(Request $request){
 
-      $data =  Post::first()->approved()->published()->take(6)->get();
+      $posts =  Post::first()->with('user','comments')->approved()->published()->take(6)->get();
 
       if ($request->ajax()) {
          
-            return response()->json($data);
+            return response()->json([ 
+               
+                  'success' => "OK",
+                  'data'    => $posts, 
+               
+                  
+            ]);
       }
     
 

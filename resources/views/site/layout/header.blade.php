@@ -1,11 +1,12 @@
 <header>
     <div class="container-fluid position-relative no-side-padding">
 
-        <a href="#" class="logo"><img src="{{asset('site/images/logo.png ')}}" alt="Logo Image"></a>
-
+        
         <div class="menu-nav-icon" data-nav-menu="#main-menu"><i class="fa fa-th-large"></i></div>
 
         <ul class="main-menu visible-on-click" id="main-menu">
+            <li><a href="{{route('home')}}"><img style="float:left;margin-top:-15px;width:130px;height:100px;border-radius:10px;" class="img-responsive logo_img" src="{{asset('site/images/logo.png ')}}" alt="Logo"></a>
+            </li>
             <li><a href="{{route('home')}}">Home</a></li>
             <li><a href="{{ route('post.all') }}">Posts</a></li>
              
